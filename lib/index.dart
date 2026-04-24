@@ -8,4 +8,5 @@ export '/page_view/pressure_page/pressure_page_widget.dart'
 export '/page_view/diabetes_page/diabetes_page_widget.dart'
     show DiabetesPageWidget;
 export '/page_view/stroke/stroke_widget.dart' show StrokeWidget;
+export '/page_view/cvd/cvd_widget.dart' show CvdWidget;
 export '/page_view/ckd/ckd_widget.dart' show CkdWidget;

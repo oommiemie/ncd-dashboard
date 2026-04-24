@@ -134,6 +134,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
           ]),
           StatefulShellBranch(routes: [
             GoRoute(
+              name: CvdWidget.routeName,
+              path: CvdWidget.routePath,
+              pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const CvdWidget(),
+              ),
+            ),
+          ]),
+          StatefulShellBranch(routes: [
+            GoRoute(
               name: CkdWidget.routeName,
               path: CkdWidget.routePath,
               pageBuilder: (context, state) => NoTransitionPage(

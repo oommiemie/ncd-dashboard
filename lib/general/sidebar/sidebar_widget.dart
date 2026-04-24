@@ -760,7 +760,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                                     highlightColor: const Color(0x2624B8C2),
                                     onTap: () async {
                                       context.goNamed(
-                                        CkdWidget.routeName,
+                                        CvdWidget.routeName,
                                         extra: <String, dynamic>{
                                           '__transition_info__': TransitionInfo(
                                             hasTransition: true,
@@ -814,11 +814,155 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                                                   width: 16.0,
                                                   height: 16.0,
                                                   child: SvgPicture.asset(
-                                                    'assets/images/sidebar/kidney.svg',
+                                                    'assets/images/sidebar/heart.svg',
                                                     width: 16.0,
                                                     height: 16.0,
                                                     colorFilter: ColorFilter.mode(
                                                       widget!.selet == 5
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      BlendMode.srcIn,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      'หลอดเลือดหัวใจ',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            font: GoogleFonts
+                                                                .ibmPlexSansThaiLooped(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                            color:
+                                                                valueOrDefault<
+                                                                    Color>(
+                                                              widget!.selet == 5
+                                                                  ? FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryText,
+                                                            ),
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(width: 8.0)),
+                                                ),
+                                              ].divide(SizedBox(width: 8.0)),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                MouseRegion(
+                                  opaque: false,
+                                  cursor:
+                                      MouseCursor.defer ?? MouseCursor.defer,
+                                  onEnter: ((event) async {
+                                    safeSetState(() =>
+                                        _model.mouseRegionHovered6 = true);
+                                  }),
+                                  onExit: ((event) async {
+                                    safeSetState(() =>
+                                        _model.mouseRegionHovered6 = false);
+                                  }),
+                                  child: InkWell(
+                                    splashColor: const Color(0x4D24B8C2),
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: const Color(0x2624B8C2),
+                                    onTap: () async {
+                                      context.goNamed(
+                                        CkdWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 350),
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    child: AnimatedContainer(
+                                      duration: const Duration(milliseconds: 250),
+                                      curve: Curves.easeOutCubic,
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: valueOrDefault<Color>(
+                                          widget!.selet == 6
+                                              ? Color(0x3324B8C2)
+                                              : Color(0x7FFFFFFF),
+                                          Color(0x00FFFFFF),
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(100.0),
+                                        border: Border.all(
+                                          color: valueOrDefault<Color>(
+                                            _model.mouseRegionHovered6 == true
+                                                ? Color(0x3224B8C2)
+                                                : Color(0x00FFFFFF),
+                                            Color(0x00FFFFFF),
+                                          ),
+                                        ),
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(100.0),
+                                        child: BackdropFilter(
+                                          filter: ImageFilter.blur(
+                                            sigmaX: 5.0,
+                                            sigmaY: 5.0,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 6.0, 12.0, 6.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                SizedBox(
+                                                  width: 16.0,
+                                                  height: 16.0,
+                                                  child: SvgPicture.asset(
+                                                    'assets/images/sidebar/kidney.svg',
+                                                    width: 16.0,
+                                                    height: 16.0,
+                                                    colorFilter: ColorFilter.mode(
+                                                      widget!.selet == 6
                                                           ? FlutterFlowTheme.of(
                                                                   context)
                                                               .secondary
@@ -853,7 +997,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                                                             color:
                                                                 valueOrDefault<
                                                                     Color>(
-                                                              widget!.selet == 5
+                                                              widget!.selet == 6
                                                                   ? FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondary

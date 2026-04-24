@@ -304,7 +304,7 @@ class _StrokeWidgetState extends State<StrokeWidget> {
     };
     return IndicatorBreakdownWidget(
       title:
-          'รายละเอียดข้อมูลผู้ป่วย - ${labels[_selectedSubtype] ?? ''}',
+          'ผู้ป่วยที่รับการรักษาโรคหลอดเลือดสมอง ${labels[_selectedSubtype] ?? ''} เกณฑ์ความดันตัวบนมากกว่าหรือเท่ากับ 140 ความดันตัวล่างมากกว่าหรือเท่ากับ 90',
       charts: [
         const HighbloodScatterChartWidgetWidget(),
         const HighBlood14090DonutWidgetWidget(),

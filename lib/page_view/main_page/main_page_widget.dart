@@ -322,6 +322,12 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           value2: 1551,
                                           subtitle3: 'Stroke (I60-I64)',
                                           value3: 123,
+                                          tooltip1:
+                                              'Ischemic stroke\nโรคหลอดเลือดสมองตีบ/อุดตัน\nรหัส ICD-10: I63',
+                                          tooltip2:
+                                              'Hemorrhagic stroke\nโรคหลอดเลือดสมองแตก\nรหัส ICD-10: I60-I62',
+                                          tooltip3:
+                                              'Stroke (รวม)\nโรคหลอดเลือดสมอง\nรหัส ICD-10: I60-I64',
                                         ),
                                       ),
                                   () => wrapWithModel(
@@ -345,6 +351,12 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           value2: 123,
                                           subtitle3: 'Stage 5 (N18.5- N18.6)',
                                           value3: 123,
+                                          tooltip1:
+                                              'Chronic kidney disease stage 3\nโรคไตเรื้อรังระยะที่ 3 (GFR 30-59)\nรหัส ICD-10: N18.3',
+                                          tooltip2:
+                                              'Chronic kidney disease stage 4\nโรคไตเรื้อรังระยะที่ 4 (GFR 15-29)\nรหัส ICD-10: N18.4',
+                                          tooltip3:
+                                              'Chronic kidney disease stage 5\nโรคไตเรื้อรังระยะสุดท้าย (GFR <15)\nรหัส ICD-10: N18.5-N18.6',
                                         ),
                                       ),
                                 ][index]();

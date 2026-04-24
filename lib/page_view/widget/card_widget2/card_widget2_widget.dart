@@ -27,6 +27,9 @@ class CardWidget2Widget extends StatefulWidget {
     required this.value2,
     required this.subtitle3,
     required this.value3,
+    this.tooltip1,
+    this.tooltip2,
+    this.tooltip3,
   });
 
   final String? label;
@@ -40,6 +43,9 @@ class CardWidget2Widget extends StatefulWidget {
   final int? value2;
   final String? subtitle3;
   final int? value3;
+  final String? tooltip1;
+  final String? tooltip2;
+  final String? tooltip3;
 
   @override
   State<CardWidget2Widget> createState() => _CardWidget2WidgetState();
@@ -137,13 +143,14 @@ class _CardWidget2WidgetState extends State<CardWidget2Widget>
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
-  Widget _buildSubStat(BuildContext context, String label, int? value) {
+  Widget _buildSubStat(
+      BuildContext context, String label, int? value, String? tooltip) {
     final formatted = formatNumber(
       value,
       formatType: FormatType.decimal,
       decimalType: DecimalType.periodDecimal,
     );
-    return Padding(
+    final pill = Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(5.0, 2.0, 5.0, 2.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(14.0),
@@ -202,6 +209,23 @@ class _CardWidget2WidgetState extends State<CardWidget2Widget>
           ),
         ),
       ),
+    );
+    if (tooltip == null || tooltip.isEmpty) return pill;
+    return Tooltip(
+      message: tooltip,
+      waitDuration: const Duration(milliseconds: 300),
+      textStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 12,
+        fontFamily: GoogleFonts.ibmPlexSansThaiLooped().fontFamily,
+      ),
+      decoration: BoxDecoration(
+        color: const Color(0xE61A1A1A),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      preferBelow: false,
+      child: pill,
     );
   }
 
@@ -401,6 +425,7 @@ class _CardWidget2WidgetState extends State<CardWidget2Widget>
                             context,
                             widget.subtitle1 ?? 'subtitle1',
                             widget.value1,
+                            widget.tooltip1,
                           ),
                         ),
                         Expanded(
@@ -408,6 +433,7 @@ class _CardWidget2WidgetState extends State<CardWidget2Widget>
                             context,
                             widget.subtitle2 ?? 'subtitle2',
                             widget.value2,
+                            widget.tooltip2,
                           ),
                         ),
                         Expanded(
@@ -415,6 +441,7 @@ class _CardWidget2WidgetState extends State<CardWidget2Widget>
                             context,
                             widget.subtitle3 ?? 'subtitle3',
                             widget.value3,
+                            widget.tooltip3,
                           ),
                         ),
                       ],
