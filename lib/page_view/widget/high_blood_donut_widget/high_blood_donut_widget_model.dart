@@ -36,13 +36,13 @@ class HighBloodDonutWidgetModel
       chart[index] = updateFn(chart[index]);
 
   List<Color> color = [
-    Color(4289677900),
-    Color(4278757187),
-    Color(4281040839),
-    Color(4294884104),
-    Color(4294940983),
-    Color(4294928385),
-    Color(4291300103)
+    const Color(0xffaf4a4c),
+    const Color(0xff08a743),
+    const Color(0xff2b7fc7),
+    const Color(0xfffebb08),
+    const Color(0xffff9937),
+    const Color(0xffff6801),
+    const Color(0xffc80b07)
   ];
   void addToColor(Color item) => color.add(item);
   void removeFromColor(Color item) => color.remove(item);

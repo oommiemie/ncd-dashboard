@@ -43,7 +43,7 @@ class _TestStaggeredListWidgetState extends State<TestStaggeredListWidget> {
   @override
   Widget build(BuildContext context) {
     return MasonryGridView.builder(
-      gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
       ),
       crossAxisSpacing: 10.0,

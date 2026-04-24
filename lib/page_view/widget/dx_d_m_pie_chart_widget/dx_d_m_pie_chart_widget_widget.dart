@@ -75,6 +75,12 @@ class _DxDMPieChartWidgetWidgetState extends State<DxDMPieChartWidgetWidget> {
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+      }),
       child: Container(
         width: double.infinity,
         height: 300.0,
@@ -219,12 +225,6 @@ class _DxDMPieChartWidgetWidgetState extends State<DxDMPieChartWidgetWidget> {
           ],
         ),
       ),
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-      }),
     );
   }
 }

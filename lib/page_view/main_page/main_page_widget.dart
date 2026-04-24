@@ -24,9 +24,7 @@ import 'main_page_model.dart';
 export 'main_page_model.dart';
 
 class MainPageWidget extends StatefulWidget {
-  const MainPageWidget({super.key, this.insideShell = false});
-
-  final bool insideShell;
+  const MainPageWidget({super.key});
 
   static String routeName = 'MainPage';
   static String routePath = '/mainPage';
@@ -57,7 +55,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.insideShell) return _buildPageContent(context);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

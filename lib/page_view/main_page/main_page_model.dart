@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/general/app_bar/app_bar_widget.dart';
 import '/general/buttonmore/buttonmore_widget.dart';
 import '/general/sidebar/sidebar_widget.dart';
@@ -12,15 +11,8 @@ import '/page_view/widget/n_c_d_cases_by_gender_widget/n_c_d_cases_by_gender_wid
 import '/page_view/widget/n_c_d_cases_by_health_region_colum_chart_widget/n_c_d_cases_by_health_region_colum_chart_widget_widget.dart';
 import '/page_view/widget/patient_incidence_histogram_chart_widget/patient_incidence_histogram_chart_widget_widget.dart';
 import '/page_view/widget/patients_missing_care_widget/patients_missing_care_widget_widget.dart';
-import 'dart:ui';
 import 'main_page_widget.dart' show MainPageWidget;
-import 'package:sticky_headers/sticky_headers.dart';
-import 'package:aligned_dialog/aligned_dialog.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   ///  State fields for stateful widgets in this page.

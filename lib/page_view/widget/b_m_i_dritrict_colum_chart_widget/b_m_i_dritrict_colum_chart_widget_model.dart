@@ -37,7 +37,7 @@ class BMIDritrictColumChartWidgetModel
               updateFn) =>
       chart[index] = updateFn(chart[index]);
 
-  List<Color> color = [Color(4278757187), Color(4285709318)];
+  List<Color> color = [const Color(0xff08a743), const Color(0xff72bc06)];
   void addToColor(Color item) => color.add(item);
   void removeFromColor(Color item) => color.remove(item);
   void removeAtIndexFromColor(int index) => color.removeAt(index);

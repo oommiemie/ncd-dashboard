@@ -42,7 +42,7 @@ class _ContentTestWidgetState extends State<ContentTestWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(24.0),
+      padding: const EdgeInsets.all(24.0),
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -71,7 +71,7 @@ class _ContentTestWidgetState extends State<ContentTestWidget> {
                 borderRadius: BorderRadius.circular(0.0),
               ),
             ),
-          ].divide(SizedBox(height: 24.0)),
+          ].divide(const SizedBox(height: 24.0)),
         ),
       ),
     );

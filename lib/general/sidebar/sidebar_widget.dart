@@ -4,6 +4,7 @@ import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'sidebar_model.dart';
@@ -233,20 +234,23 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
                                               children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
+                                                SizedBox(
+                                                  width: 16.0,
+                                                  height: 16.0,
+                                                  child: SvgPicture.asset(
+                                                    'assets/images/sidebar/chart_pie.svg',
+                                                    width: 16.0,
+                                                    height: 16.0,
+                                                    colorFilter: ColorFilter.mode(
                                                       widget!.selet == 1
-                                                          ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/tvs8idm6s818/icon1a.png'
-                                                          : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/ng147au2vg2g/icon1.png',
-                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/ng147au2vg2g/icon1.png',
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      BlendMode.srcIn,
                                                     ),
-                                                    width: 24.0,
-                                                    height: 24.0,
-                                                    fit: BoxFit.cover,
                                                   ),
                                                 ),
                                                 Row(
@@ -374,20 +378,23 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
                                               children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
+                                                SizedBox(
+                                                  width: 16.0,
+                                                  height: 16.0,
+                                                  child: SvgPicture.asset(
+                                                    'assets/images/sidebar/bp_cuff.svg',
+                                                    width: 16.0,
+                                                    height: 16.0,
+                                                    colorFilter: ColorFilter.mode(
                                                       widget!.selet == 2
-                                                          ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/tvs8idm6s818/icon1a.png'
-                                                          : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/ng147au2vg2g/icon1.png',
-                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/ng147au2vg2g/icon1.png',
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      BlendMode.srcIn,
                                                     ),
-                                                    width: 24.0,
-                                                    height: 24.0,
-                                                    fit: BoxFit.cover,
                                                   ),
                                                 ),
                                                 Row(
@@ -515,20 +522,23 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
                                               children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
+                                                SizedBox(
+                                                  width: 16.0,
+                                                  height: 16.0,
+                                                  child: SvgPicture.asset(
+                                                    'assets/images/sidebar/drop.svg',
+                                                    width: 16.0,
+                                                    height: 16.0,
+                                                    colorFilter: ColorFilter.mode(
                                                       widget!.selet == 3
-                                                          ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/tvs8idm6s818/icon1a.png'
-                                                          : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/ng147au2vg2g/icon1.png',
-                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/ng147au2vg2g/icon1.png',
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      BlendMode.srcIn,
                                                     ),
-                                                    width: 24.0,
-                                                    height: 24.0,
-                                                    fit: BoxFit.cover,
                                                   ),
                                                 ),
                                                 Row(
@@ -656,20 +666,23 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
                                               children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
+                                                SizedBox(
+                                                  width: 16.0,
+                                                  height: 16.0,
+                                                  child: SvgPicture.asset(
+                                                    'assets/images/sidebar/brain.svg',
+                                                    width: 16.0,
+                                                    height: 16.0,
+                                                    colorFilter: ColorFilter.mode(
                                                       widget!.selet == 4
-                                                          ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/tvs8idm6s818/icon1a.png'
-                                                          : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/ng147au2vg2g/icon1.png',
-                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/ng147au2vg2g/icon1.png',
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      BlendMode.srcIn,
                                                     ),
-                                                    width: 24.0,
-                                                    height: 24.0,
-                                                    fit: BoxFit.cover,
                                                   ),
                                                 ),
                                                 Row(
@@ -797,20 +810,23 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
                                               children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
+                                                SizedBox(
+                                                  width: 16.0,
+                                                  height: 16.0,
+                                                  child: SvgPicture.asset(
+                                                    'assets/images/sidebar/kidney.svg',
+                                                    width: 16.0,
+                                                    height: 16.0,
+                                                    colorFilter: ColorFilter.mode(
                                                       widget!.selet == 5
-                                                          ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/tvs8idm6s818/icon1a.png'
-                                                          : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/ng147au2vg2g/icon1.png',
-                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/ng147au2vg2g/icon1.png',
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      BlendMode.srcIn,
                                                     ),
-                                                    width: 24.0,
-                                                    height: 24.0,
-                                                    fit: BoxFit.cover,
                                                   ),
                                                 ),
                                                 Row(

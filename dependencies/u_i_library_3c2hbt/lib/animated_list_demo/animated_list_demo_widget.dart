@@ -57,13 +57,13 @@ class _AnimatedListDemoWidgetState extends State<AnimatedListDemoWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Stack(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   children: [
                     Container(
                       width: 400.0,
@@ -80,9 +80,9 @@ class _AnimatedListDemoWidgetState extends State<AnimatedListDemoWidget> {
                             FlutterFlowTheme.of(context).secondary,
                             FlutterFlowTheme.of(context).tertiary
                           ],
-                          stops: [0.0, 1.0],
-                          begin: AlignmentDirectional(0.0, -1.0),
-                          end: AlignmentDirectional(0, 1.0),
+                          stops: const [0.0, 1.0],
+                          begin: const AlignmentDirectional(0.0, -1.0),
+                          end: const AlignmentDirectional(0, 1.0),
                         ),
                         borderRadius: BorderRadius.circular(40.0),
                       ),
@@ -95,7 +95,7 @@ class _AnimatedListDemoWidgetState extends State<AnimatedListDemoWidget> {
                             width: 200.0,
                             height: 200.0,
                             decoration: BoxDecoration(
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 24.0,
                                   color: Color(0x1A000000),
@@ -107,12 +107,12 @@ class _AnimatedListDemoWidgetState extends State<AnimatedListDemoWidget> {
                               ],
                               gradient: LinearGradient(
                                 colors: [
-                                  Color(0xFFAEA6FF),
+                                  const Color(0xFFAEA6FF),
                                   FlutterFlowTheme.of(context).primary
                                 ],
-                                stops: [0.0, 1.0],
-                                begin: AlignmentDirectional(0.0, -1.0),
-                                end: AlignmentDirectional(0, 1.0),
+                                stops: const [0.0, 1.0],
+                                begin: const AlignmentDirectional(0.0, -1.0),
+                                end: const AlignmentDirectional(0, 1.0),
                               ),
                               borderRadius: BorderRadius.circular(1000.0),
                             ),
@@ -127,7 +127,7 @@ class _AnimatedListDemoWidgetState extends State<AnimatedListDemoWidget> {
                           sigmaX: 4.0,
                           sigmaY: 4.0,
                         ),
-                        child: Container(
+                        child: SizedBox(
                           width: null,
                           height: null,
                           child: custom_widgets.MotionWrapper(
@@ -136,7 +136,7 @@ class _AnimatedListDemoWidgetState extends State<AnimatedListDemoWidget> {
                             borderRadius: 24.0,
                             glare: true,
                             shadow: false,
-                            child: () => SampleCardWidget(),
+                            child: () => const SampleCardWidget(),
                           ),
                         ),
                       ),

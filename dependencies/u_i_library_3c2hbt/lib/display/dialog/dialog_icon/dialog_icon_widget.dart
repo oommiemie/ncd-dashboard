@@ -42,26 +42,26 @@ class DialogIconWidget extends StatefulWidget {
     double? dialogWidth,
     this.showDescription,
     this.hideRightButton,
-  })  : this.title = title ?? '[title]',
-        this.description = description ?? 'description',
-        this.dialogBorderRadius = dialogBorderRadius ?? 24.0,
-        this.margin = margin ?? 24.0,
-        this.titleSize = titleSize ?? 20.0,
-        this.titleColor = titleColor ?? const Color(0xFF111111),
-        this.descriptionSize = descriptionSize ?? 4.0,
-        this.descriptionColor = descriptionColor ?? const Color(0xFF292929),
-        this.leftBtnColor = leftBtnColor ?? Colors.white,
-        this.leftBtnText = leftBtnText ?? 'Lorem',
-        this.leftBtnTextColor = leftBtnTextColor ?? Colors.black,
-        this.leftBtnTextSize = leftBtnTextSize ?? 16.0,
-        this.leftBtnBorder = leftBtnBorder ?? 16.0,
-        this.leftBtnBorderColor = leftBtnBorderColor ?? const Color(0xFFEEEEEE),
-        this.rightBtnColor = rightBtnColor ?? Colors.black,
-        this.rightBtnText = rightBtnText ?? 'Lorem',
-        this.rightBtnTextColor = rightBtnTextColor ?? Colors.white,
-        this.rightBtnTextSize = rightBtnTextSize ?? 16.0,
-        this.buttonRounded = buttonRounded ?? 16.0,
-        this.dialogWidth = dialogWidth ?? 400.0;
+  })  : title = title ?? '[title]',
+        description = description ?? 'description',
+        dialogBorderRadius = dialogBorderRadius ?? 24.0,
+        margin = margin ?? 24.0,
+        titleSize = titleSize ?? 20.0,
+        titleColor = titleColor ?? const Color(0xFF111111),
+        descriptionSize = descriptionSize ?? 4.0,
+        descriptionColor = descriptionColor ?? const Color(0xFF292929),
+        leftBtnColor = leftBtnColor ?? Colors.white,
+        leftBtnText = leftBtnText ?? 'Lorem',
+        leftBtnTextColor = leftBtnTextColor ?? Colors.black,
+        leftBtnTextSize = leftBtnTextSize ?? 16.0,
+        leftBtnBorder = leftBtnBorder ?? 16.0,
+        leftBtnBorderColor = leftBtnBorderColor ?? const Color(0xFFEEEEEE),
+        rightBtnColor = rightBtnColor ?? Colors.black,
+        rightBtnText = rightBtnText ?? 'Lorem',
+        rightBtnTextColor = rightBtnTextColor ?? Colors.white,
+        rightBtnTextSize = rightBtnTextSize ?? 16.0,
+        buttonRounded = buttonRounded ?? 16.0,
+        dialogWidth = dialogWidth ?? 400.0;
 
   final Widget? illustraion;
   final String title;
@@ -127,8 +127,8 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -146,8 +146,8 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
             curve: Curves.easeInOut,
             delay: 50.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -165,8 +165,8 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -184,8 +184,8 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
             curve: Curves.easeInOut,
             delay: 150.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -203,8 +203,8 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -224,19 +224,19 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
   Widget build(BuildContext context) {
     return Container(
       width: valueOrDefault<double>(
-        widget!.dialogWidth,
+        widget.dialogWidth,
         400.0,
       ),
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.circular(valueOrDefault<double>(
-          widget!.dialogBorderRadius,
+          widget.dialogBorderRadius,
           24.0,
         )),
       ),
       child: Padding(
         padding: EdgeInsets.all(valueOrDefault<double>(
-          widget!.margin,
+          widget.margin,
           24.0,
         )),
         child: Column(
@@ -245,10 +245,10 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
             Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                widget!.illustraion!,
+                widget.illustraion!,
                 Text(
                   valueOrDefault<String>(
-                    widget!.title,
+                    widget.title,
                     '[title]',
                   ),
                   style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -260,11 +260,11 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
                               FlutterFlowTheme.of(context).titleLarge.fontStyle,
                         ),
                         color: valueOrDefault<Color>(
-                          widget!.titleColor,
+                          widget.titleColor,
                           FlutterFlowTheme.of(context).primaryText,
                         ),
                         fontSize: valueOrDefault<double>(
-                          widget!.titleSize,
+                          widget.titleSize,
                           20.0,
                         ),
                         letterSpacing: 0.0,
@@ -274,10 +274,10 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
                             FlutterFlowTheme.of(context).titleLarge.fontStyle,
                       ),
                 ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation1']!),
-                if (widget!.showDescription ?? true)
+                if (widget.showDescription ?? true)
                   Text(
                     valueOrDefault<String>(
-                      widget!.description,
+                      widget.description,
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
                     ),
                     textAlign: TextAlign.center,
@@ -291,11 +291,11 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
                                 .fontStyle,
                           ),
                           color: valueOrDefault<Color>(
-                            widget!.descriptionColor,
+                            widget.descriptionColor,
                             FlutterFlowTheme.of(context).secondaryText,
                           ),
                           fontSize: valueOrDefault<double>(
-                            widget!.descriptionSize,
+                            widget.descriptionSize,
                             14.0,
                           ),
                           letterSpacing: 0.0,
@@ -308,7 +308,7 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
                         ),
                   ).animateOnPageLoad(
                       animationsMap['textOnPageLoadAnimation2']!),
-              ].divide(SizedBox(height: 8.0)),
+              ].divide(const SizedBox(height: 8.0)),
             ),
             Row(
               mainAxisSize: MainAxisSize.min,
@@ -319,17 +319,17 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
                       await widget.leftBtnAction?.call();
                     },
                     text: valueOrDefault<String>(
-                      widget!.leftBtnText,
+                      widget.leftBtnText,
                       'Lorem',
                     ),
                     options: FFButtonOptions(
                       height: 52.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: valueOrDefault<Color>(
-                        widget!.leftBtnColor,
+                        widget.leftBtnColor,
                         FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       textStyle:
@@ -342,8 +342,8 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
                                       .titleSmall
                                       .fontStyle,
                                 ),
-                                color: widget!.leftBtnTextColor,
-                                fontSize: widget!.leftBtnTextSize,
+                                color: widget.leftBtnTextColor,
+                                fontSize: widget.leftBtnTextSize,
                                 letterSpacing: 0.0,
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .titleSmall
@@ -355,40 +355,40 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
                       elevation: 0.0,
                       borderSide: BorderSide(
                         color: valueOrDefault<Color>(
-                          widget!.leftBtnBorderColor,
+                          widget.leftBtnBorderColor,
                           FlutterFlowTheme.of(context).alternate,
                         ),
                         width: valueOrDefault<double>(
-                          widget!.leftBtnBorder,
+                          widget.leftBtnBorder,
                           1.0,
                         ),
                       ),
                       borderRadius:
                           BorderRadius.circular(valueOrDefault<double>(
-                        widget!.buttonRounded,
+                        widget.buttonRounded,
                         16.0,
                       )),
                     ),
                   ).animateOnPageLoad(
                       animationsMap['buttonOnPageLoadAnimation1']!),
                 ),
-                if (!widget!.hideRightButton!)
+                if (!widget.hideRightButton!)
                   Expanded(
                     child: FFButtonWidget(
                       onPressed: () async {
                         await widget.rightBtnAction?.call();
                       },
                       text: valueOrDefault<String>(
-                        widget!.rightBtnText,
+                        widget.rightBtnText,
                         'Lorem',
                       ),
                       options: FFButtonOptions(
                         height: 52.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: widget!.rightBtnColor,
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: widget.rightBtnColor,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   font: GoogleFonts.ibmPlexSansThaiLooped(
@@ -400,11 +400,11 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
                                         .fontStyle,
                                   ),
                                   color: valueOrDefault<Color>(
-                                    widget!.rightBtnTextColor,
+                                    widget.rightBtnTextColor,
                                     FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                   ),
-                                  fontSize: widget!.rightBtnTextSize,
+                                  fontSize: widget.rightBtnTextSize,
                                   letterSpacing: 0.0,
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -416,16 +416,16 @@ class _DialogIconWidgetState extends State<DialogIconWidget>
                         elevation: 0.0,
                         borderRadius:
                             BorderRadius.circular(valueOrDefault<double>(
-                          widget!.buttonRounded,
+                          widget.buttonRounded,
                           16.0,
                         )),
                       ),
                     ).animateOnPageLoad(
                         animationsMap['buttonOnPageLoadAnimation2']!),
                   ),
-              ].divide(SizedBox(width: 16.0)),
+              ].divide(const SizedBox(width: 16.0)),
             ),
-          ].divide(SizedBox(height: 16.0)),
+          ].divide(const SizedBox(height: 16.0)),
         ),
       ),
     ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!);

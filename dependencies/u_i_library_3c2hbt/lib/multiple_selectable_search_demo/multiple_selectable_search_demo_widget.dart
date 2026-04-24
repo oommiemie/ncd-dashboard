@@ -58,15 +58,15 @@ class _MultipleSelectableSearchDemoWidgetState
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   width: 400.0,
                   height: 300.0,
-                  child: custom_widgets.MultiSelectSearch(
+                  child: const custom_widgets.MultiSelectSearch(
                     width: 400.0,
                     height: 300.0,
                   ),

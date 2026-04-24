@@ -45,8 +45,8 @@ class _MultiSelectSearchState extends State<MultiSelectSearch> {
 
         /// Required
         fieldToCheck: (item) => item, // ใช้ item ตรง ๆ (เพราะเป็น String)
-        searchField: TextField(
-          decoration: const InputDecoration(
+        searchField: const TextField(
+          decoration: InputDecoration(
             hintText: 'Search fruits...',
             prefixIcon: Icon(Icons.search),
             border: OutlineInputBorder(),

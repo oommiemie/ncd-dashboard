@@ -51,7 +51,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.fromLTRB(
+      padding: const EdgeInsets.fromLTRB(
         0,
         16.0,
         0,
@@ -60,13 +60,13 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
       scrollDirection: Axis.vertical,
       children: [
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
           child: StickyHeader(
             overlapHeaders: false,
             header: wrapWithModel(
               model: _model.appBarModel,
               updateCallback: () => safeSetState(() {}),
-              child: AppBarWidget(
+              child: const AppBarWidget(
                 filteryear: true,
                 filterprovince: false,
                 filtermore: false,
@@ -78,13 +78,13 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
               children: [
                 MasonryGridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 8,
                   ),
                   crossAxisSpacing: 4.0,
                   mainAxisSpacing: 4.0,
                   itemCount: 8,
-                  padding: EdgeInsets.fromLTRB(
+                  padding: const EdgeInsets.fromLTRB(
                     0,
                     0,
                     0,
@@ -210,13 +210,13 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                 ),
                 MasonryGridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                   ),
                   crossAxisSpacing: 16.0,
                   mainAxisSpacing: 16.0,
                   itemCount: 2,
-                  padding: EdgeInsets.fromLTRB(
+                  padding: const EdgeInsets.fromLTRB(
                     0,
                     0,
                     0,
@@ -229,12 +229,12 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                             model: _model
                                 .patientIncidenceHistogramChartWidgetModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: PatientIncidenceHistogramChartWidgetWidget(),
+                            child: const PatientIncidenceHistogramChartWidgetWidget(),
                           ),
                       () => wrapWithModel(
                             model: _model.diseaseTreatmentCountDonutWigetModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: DiseaseTreatmentCountDonutWigetWidget(),
+                            child: const DiseaseTreatmentCountDonutWigetWidget(),
                           ),
                     ][index]();
                   },
@@ -242,12 +242,12 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                 wrapWithModel(
                   model: _model.nCDCasesByGenderWidgetModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: NCDCasesByGenderWidgetWidget(),
+                  child: const NCDCasesByGenderWidgetWidget(),
                 ),
                 wrapWithModel(
                   model: _model.nCDCasesByHealthRegionColumChartWidgetModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: NCDCasesByHealthRegionColumChartWidgetWidget(),
+                  child: const NCDCasesByHealthRegionColumChartWidgetWidget(),
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -256,9 +256,9 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                         FlutterFlowTheme.of(context).primary,
                         FlutterFlowTheme.of(context).secondary
                       ],
-                      stops: [0.0, 1.0],
-                      begin: AlignmentDirectional(0.0, -1.0),
-                      end: AlignmentDirectional(0, 1.0),
+                      stops: const [0.0, 1.0],
+                      begin: const AlignmentDirectional(0.0, -1.0),
+                      end: const AlignmentDirectional(0, 1.0),
                     ),
                     borderRadius: BorderRadius.circular(34.0),
                   ),
@@ -267,7 +267,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsets.all(16.0),
+                        padding: const EdgeInsets.all(16.0),
                         child: Text(
                           'จำนวนผู้ป่วยโรคติดต่อไม่เรื้อรังตามเขตสุขภาพ',
                           style:
@@ -299,17 +299,17 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                           borderRadius: BorderRadius.circular(34.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: MasonryGridView.builder(
                             physics: const NeverScrollableScrollPhysics(),
                             gridDelegate:
-                                SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 3,
                             ),
                             crossAxisSpacing: 16.0,
                             mainAxisSpacing: 16.0,
                             itemCount: 15,
-                            padding: EdgeInsets.fromLTRB(
+                            padding: const EdgeInsets.fromLTRB(
                               0,
                               0,
                               0,
@@ -321,7 +321,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel1,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 24141.0,
                                         label: 'เขตสุขภาพที่ 1',
                                         hypertension: 20000.0,
@@ -336,7 +336,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel2,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 23002.0,
                                         label: 'เขตสุขภาพที่ 2',
                                         hypertension: 1130.0,
@@ -351,7 +351,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel3,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 24024.0,
                                         label: 'เขตสุขภาพที่ 3',
                                         hypertension: 20012.0,
@@ -366,7 +366,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel4,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 5204.0,
                                         label: 'เขตสุขภาพที่ 4',
                                         hypertension: 9550.0,
@@ -382,7 +382,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                       width: double.infinity,
                                       height: 350.0,
                                       decoration: BoxDecoration(
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           colors: [
                                             Color(0x1A75E2FF),
                                             Color(0x32419BF1)
@@ -397,7 +397,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 1.0),
+                                            const AlignmentDirectional(0.0, 1.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
@@ -406,7 +406,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                             width: 350.0,
                                             height: double.infinity,
                                             fit: BoxFit.contain,
-                                            alignment: Alignment(1.0, 0.0),
+                                            alignment: const Alignment(1.0, 0.0),
                                           ),
                                         ),
                                       ),
@@ -414,7 +414,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel5,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 34002.0,
                                         label: 'เขตสุขภาพที่ 5',
                                         hypertension: 22034.0,
@@ -429,7 +429,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel6,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 3140.0,
                                         label: 'เขตสุขภาพที่ 6',
                                         hypertension: 24021.0,
@@ -444,7 +444,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel7,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 10000.0,
                                         label: 'เขตสุขภาพที่ 7',
                                         hypertension: 20000.0,
@@ -459,7 +459,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel8,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 10000.0,
                                         label: 'เขตสุขภาพที่ 8',
                                         hypertension: 20000.0,
@@ -474,7 +474,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel9,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 10500.0,
                                         label: 'เขตสุขภาพที่ 9',
                                         hypertension: 20900.0,
@@ -490,7 +490,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                       width: double.infinity,
                                       height: 350.0,
                                       decoration: BoxDecoration(
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           colors: [
                                             Color(0x1A75E2FF),
                                             Color(0x32419BF1)
@@ -505,7 +505,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 1.0),
+                                            const AlignmentDirectional(0.0, 1.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
@@ -514,7 +514,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                             width: 350.0,
                                             height: double.infinity,
                                             fit: BoxFit.contain,
-                                            alignment: Alignment(0.0, 0.0),
+                                            alignment: const Alignment(0.0, 0.0),
                                           ),
                                         ),
                                       ),
@@ -522,7 +522,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel10,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 10080.0,
                                         label: 'เขตสุขภาพที่ 10',
                                         hypertension: 20400.0,
@@ -537,7 +537,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel11,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 10500.0,
                                         label: 'เขตสุขภาพที่ 11',
                                         hypertension: 20500.0,
@@ -552,7 +552,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel12,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 10000.0,
                                         label: 'เขตสุขภาพที่ 12',
                                         hypertension: 20500.0,
@@ -567,7 +567,7 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                                 () => wrapWithModel(
                                       model: _model.barChartWidgetModel13,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: BarChartWidgetWidget(
+                                      child: const BarChartWidgetWidget(
                                         copd: 10400.0,
                                         label: 'เขตสุขภาพที่ 13',
                                         hypertension: 20000.0,
@@ -587,11 +587,11 @@ class _MainPageViewWidgetState extends State<MainPageViewWidget> {
                     ],
                   ),
                 ),
-              ].divide(SizedBox(height: 16.0)).around(SizedBox(height: 16.0)),
+              ].divide(const SizedBox(height: 16.0)).around(const SizedBox(height: 16.0)),
             ),
           ),
         ),
-      ].divide(SizedBox(height: 16.0)),
+      ].divide(const SizedBox(height: 16.0)),
     );
   }
 }

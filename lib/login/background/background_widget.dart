@@ -46,8 +46,8 @@ class _BackgroundWidgetState extends State<BackgroundWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 8000.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(2.0, 2.0),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(2.0, 2.0),
           ),
         ],
       ),
@@ -65,7 +65,7 @@ class _BackgroundWidgetState extends State<BackgroundWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: double.infinity,
       child: Stack(
@@ -89,7 +89,7 @@ class _BackgroundWidgetState extends State<BackgroundWidget>
               child: Container(
                 width: double.infinity,
                 height: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [Color(0x1AFFFFFF), Color(0xF0FFFFFF)],
                     stops: [0.0, 1.0],

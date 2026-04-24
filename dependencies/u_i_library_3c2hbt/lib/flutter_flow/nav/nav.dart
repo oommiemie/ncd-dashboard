@@ -53,7 +53,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : ExperimentalWidget(),
+          : const ExperimentalWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -68,67 +68,67 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : ExperimentalWidget(),
+              : const ExperimentalWidget(),
         ),
         FFRoute(
           name: CoverWidget.routeName,
           path: CoverWidget.routePath,
-          builder: (context, params) => CoverWidget(),
+          builder: (context, params) => const CoverWidget(),
         ),
         FFRoute(
           name: ColumnStackedChartWidget.routeName,
           path: ColumnStackedChartWidget.routePath,
-          builder: (context, params) => ColumnStackedChartWidget(),
+          builder: (context, params) => const ColumnStackedChartWidget(),
         ),
         FFRoute(
           name: BarStackedChartWidget.routeName,
           path: BarStackedChartWidget.routePath,
-          builder: (context, params) => BarStackedChartWidget(),
+          builder: (context, params) => const BarStackedChartWidget(),
         ),
         FFRoute(
           name: ColumnChartWidget.routeName,
           path: ColumnChartWidget.routePath,
-          builder: (context, params) => ColumnChartWidget(),
+          builder: (context, params) => const ColumnChartWidget(),
         ),
         FFRoute(
           name: PreviewSpikeChartWidget.routeName,
           path: PreviewSpikeChartWidget.routePath,
-          builder: (context, params) => PreviewSpikeChartWidget(),
+          builder: (context, params) => const PreviewSpikeChartWidget(),
         ),
         FFRoute(
           name: RippleDemoWidget.routeName,
           path: RippleDemoWidget.routePath,
-          builder: (context, params) => RippleDemoWidget(),
+          builder: (context, params) => const RippleDemoWidget(),
         ),
         FFRoute(
           name: SliverWidget.routeName,
           path: SliverWidget.routePath,
-          builder: (context, params) => SliverWidget(),
+          builder: (context, params) => const SliverWidget(),
         ),
         FFRoute(
           name: StepperDemoWidget.routeName,
           path: StepperDemoWidget.routePath,
-          builder: (context, params) => StepperDemoWidget(),
+          builder: (context, params) => const StepperDemoWidget(),
         ),
         FFRoute(
           name: StaticLabelDemoWidget.routeName,
           path: StaticLabelDemoWidget.routePath,
-          builder: (context, params) => StaticLabelDemoWidget(),
+          builder: (context, params) => const StaticLabelDemoWidget(),
         ),
         FFRoute(
           name: AnimatedListDemoWidget.routeName,
           path: AnimatedListDemoWidget.routePath,
-          builder: (context, params) => AnimatedListDemoWidget(),
+          builder: (context, params) => const AnimatedListDemoWidget(),
         ),
         FFRoute(
           name: MultipleSelectableSearchDemoWidget.routeName,
           path: MultipleSelectableSearchDemoWidget.routePath,
-          builder: (context, params) => MultipleSelectableSearchDemoWidget(),
+          builder: (context, params) => const MultipleSelectableSearchDemoWidget(),
         ),
         FFRoute(
           name: ExperimentalWidget.routeName,
           path: ExperimentalWidget.routePath,
-          builder: (context, params) => ExperimentalWidget(),
+          builder: (context, params) => const ExperimentalWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -350,7 +350,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

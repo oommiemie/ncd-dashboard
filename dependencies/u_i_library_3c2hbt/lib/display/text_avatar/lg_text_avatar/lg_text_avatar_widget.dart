@@ -13,9 +13,9 @@ class LgTextAvatarWidget extends StatefulWidget {
     String? initText,
     Color? bgColor,
     Color? textColor,
-  })  : this.initText = initText ?? 'TW',
-        this.bgColor = bgColor ?? Colors.black,
-        this.textColor = textColor ?? Colors.white;
+  })  : initText = initText ?? 'TW',
+        bgColor = bgColor ?? Colors.black,
+        textColor = textColor ?? Colors.white;
 
   final String initText;
   final Color bgColor;
@@ -56,15 +56,15 @@ class _LgTextAvatarWidgetState extends State<LgTextAvatarWidget> {
       height: 64.0,
       decoration: BoxDecoration(
         color: valueOrDefault<Color>(
-          widget!.bgColor,
+          widget.bgColor,
           Colors.white,
         ),
         borderRadius: BorderRadius.circular(100.0),
       ),
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Text(
         valueOrDefault<String>(
-          widget!.initText,
+          widget.initText,
           'TW',
         ),
         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -72,7 +72,7 @@ class _LgTextAvatarWidgetState extends State<LgTextAvatarWidget> {
                 fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
               ),
-              color: widget!.textColor,
+              color: widget.textColor,
               fontSize: 24.0,
               letterSpacing: 0.0,
               fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,

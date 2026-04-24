@@ -27,9 +27,7 @@ import 'district_page_model.dart';
 export 'district_page_model.dart';
 
 class DistrictPageWidget extends StatefulWidget {
-  const DistrictPageWidget({super.key, this.insideShell = false});
-
-  final bool insideShell;
+  const DistrictPageWidget({super.key});
 
   static String routeName = 'DistrictPage';
   static String routePath = '/districtPage';
@@ -63,7 +61,6 @@ class _DistrictPageWidgetState extends State<DistrictPageWidget> {
     context.watch<FFAppState>();
     context.watch<u_i_library_3c2hbt_app_state.FFAppState>();
 
-    if (widget.insideShell) return _buildPageContent(context);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

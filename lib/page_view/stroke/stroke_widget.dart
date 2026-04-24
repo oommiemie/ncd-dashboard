@@ -7,7 +7,11 @@ import '/general/buttonmore/buttonmore_widget.dart';
 import '/general/sidebar/sidebar_widget.dart';
 import '/login/background/background_widget.dart';
 import '/page_view/widget/b_m_i_colum_chart_widget/b_m_i_colum_chart_widget_widget.dart';
+import '/page_view/widget/high_blood140_90_donut_widget/high_blood14090_donut_widget_widget.dart';
+import '/page_view/widget/high_blood_colum_chart_widget/high_blood_colum_chart_widget_widget.dart';
 import '/page_view/widget/high_blood_heatmap_witget/high_blood_heatmap_witget_widget.dart';
+import '/page_view/widget/highblood_scatter_chart_widget/highblood_scatter_chart_widget_widget.dart';
+import '/page_view/widget/indicator_breakdown_widget/indicator_breakdown_widget_widget.dart';
 import '/page_view/widget/patinestroke_lab_hb_a1_c_stack_chart_widget/patinestroke_lab_hb_a1_c_stack_chart_widget_widget.dart';
 import '/page_view/widget/stroke_b_m_i_colum_chart_widget/stroke_b_m_i_colum_chart_widget_widget.dart';
 import '/page_view/widget/strokemap_witget/strokemap_witget_widget.dart';
@@ -23,9 +27,7 @@ import 'stroke_model.dart';
 export 'stroke_model.dart';
 
 class StrokeWidget extends StatefulWidget {
-  const StrokeWidget({super.key, this.insideShell = false});
-
-  final bool insideShell;
+  const StrokeWidget({super.key});
 
   static String routeName = 'Stroke';
   static String routePath = '/stroke';
@@ -58,61 +60,270 @@ class _StrokeWidgetState extends State<StrokeWidget> {
 
   Widget _buildSubtypeFilter({
     required List<(String, String)> options,
+    required Map<String, int> counts,
     required String selected,
     required ValueChanged<String> onSelected,
+    required Color gradientStart,
+    required Color gradientEnd,
+    required String image,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.circular(34.0),
-        border: Border.all(color: FlutterFlowTheme.of(context).alternate),
-      ),
-      padding: const EdgeInsets.all(12.0),
-      child: Wrap(
-        spacing: 8.0,
-        runSpacing: 8.0,
-        children: options.map((opt) {
-          final value = opt.$1;
-          final label = opt.$2;
-          final isActive = value == selected;
-          return ChoiceChip(
-            selected: isActive,
-            onSelected: (_) => onSelected(value),
-            label: Text(
-              label,
-              style: FlutterFlowTheme.of(context).bodySmall.override(
-                    font: GoogleFonts.ibmPlexSansThaiLooped(
-                      fontWeight: FontWeight.w500,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).bodySmall.fontStyle,
-                    ),
-                    color: isActive
-                        ? FlutterFlowTheme.of(context).secondaryBackground
-                        : FlutterFlowTheme.of(context).primaryText,
-                    letterSpacing: 0.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-            ),
-            selectedColor: FlutterFlowTheme.of(context).primary,
-            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(100.0),
-              side: BorderSide(
-                color: isActive
-                    ? FlutterFlowTheme.of(context).primary
-                    : FlutterFlowTheme.of(context).alternate,
-              ),
-            ),
+    final maxCount =
+        counts.values.fold<int>(0, (p, c) => c > p ? c : p);
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isNarrow = constraints.maxWidth < 640;
+        final cards = <Widget>[];
+        for (var i = 0; i < options.length; i++) {
+          final card = _buildSubtypeCard(
+            label: options[i].$2,
+            count: counts[options[i].$1] ?? 0,
+            maxCount: maxCount,
+            isActive: options[i].$1 == selected,
+            gradientStart: gradientStart,
+            gradientEnd: gradientEnd,
+            image: image,
+            onTap: () => onSelected(options[i].$1),
           );
-        }).toList(),
+          cards.add(isNarrow ? card : Expanded(child: card));
+          if (i < options.length - 1) {
+            cards.add(SizedBox(
+              width: isNarrow ? 0 : 14,
+              height: isNarrow ? 12 : 0,
+            ));
+          }
+        }
+        return Flex(
+          direction: isNarrow ? Axis.vertical : Axis.horizontal,
+          children: cards,
+        );
+      },
+    );
+  }
+
+  Widget _buildSubtypeCard({
+    required String label,
+    required int count,
+    required int maxCount,
+    required bool isActive,
+    required Color gradientStart,
+    required Color gradientEnd,
+    required String image,
+    required VoidCallback onTap,
+  }) {
+    final ratio = maxCount > 0 ? count / maxCount : 0.0;
+    final formatted = count.toString().replaceAllMapped(
+          RegExp(r'(\d)(?=(\d{3})+(?!\d))'),
+          (m) => '${m[1]},',
+        );
+    return Material(
+      color: Colors.transparent,
+      borderRadius: BorderRadius.circular(24.0),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(24.0),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOutCubic,
+          height: 150.0,
+          decoration: BoxDecoration(
+            gradient: isActive
+                ? LinearGradient(
+                    colors: [gradientStart, gradientEnd],
+                    stops: const [0.0, 1.0],
+                    begin: const AlignmentDirectional(0.0, -1.0),
+                    end: const AlignmentDirectional(0.0, 1.0),
+                  )
+                : null,
+            color: isActive
+                ? null
+                : FlutterFlowTheme.of(context).secondaryBackground,
+            borderRadius: BorderRadius.circular(24.0),
+            border: Border.all(
+              color: isActive
+                  ? Colors.transparent
+                  : gradientEnd.withOpacity(0.25),
+              width: 1.5,
+            ),
+            boxShadow: isActive
+                ? [
+                    BoxShadow(
+                      color: gradientEnd.withOpacity(0.35),
+                      blurRadius: 18,
+                      offset: const Offset(0, 6),
+                    ),
+                  ]
+                : const [],
+          ),
+          child: Stack(
+            children: [
+              Align(
+                alignment: const AlignmentDirectional(1.0, 0.0),
+                child: Opacity(
+                  opacity: isActive ? 1.0 : 0.35,
+                  child: Container(
+                    width: 60.0,
+                    height: 90.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        image: Image.network(image).image,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                label,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      font: GoogleFonts.ibmPlexSansThaiLooped(
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FlutterFlowTheme.of(context)
+                            .bodyMedium
+                            .fontStyle,
+                      ),
+                      color: isActive
+                          ? FlutterFlowTheme.of(context).secondaryBackground
+                          : gradientEnd,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  LayoutBuilder(
+                    builder: (context, c) => ClipRRect(
+                      borderRadius: BorderRadius.circular(100),
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 6,
+                            width: c.maxWidth,
+                            color: isActive
+                                ? Colors.white.withOpacity(0.25)
+                                : gradientEnd.withOpacity(0.12),
+                          ),
+                          AnimatedContainer(
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeOutCubic,
+                            height: 6,
+                            width: c.maxWidth * ratio,
+                            decoration: BoxDecoration(
+                              color: isActive ? Colors.white : gradientEnd,
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(100.0),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 20.0, sigmaY: 20.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: isActive
+                              ? const Color(0xE6FFFFFF)
+                              : gradientEnd.withOpacity(0.10),
+                          borderRadius: BorderRadius.circular(100.0),
+                        ),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            14.0, 6.0, 14.0, 6.0),
+                        child: RichText(
+                          textScaler: MediaQuery.of(context).textScaler,
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: formatted,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      font: GoogleFonts.ibmPlexSansThaiLooped(
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                      color: gradientEnd,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
+                              TextSpan(
+                                text: '  ราย',
+                                style: FlutterFlowTheme.of(context)
+                                    .labelSmall
+                                    .override(
+                                      font: GoogleFonts.ibmPlexSansThaiLooped(
+                                        fontWeight: FontWeight.w400,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+              ),
+            ],
+          ),
+        ),
       ),
+    );
+  }
+
+  Widget _buildBreakdownSection() {
+    const labels = {
+      'stroke_total': 'Stroke (I60-I64)',
+      'ischemic': 'Ischemic (I63)',
+      'hemorrhagic': 'Hemorrhagic (I60-I62)',
+    };
+    return IndicatorBreakdownWidget(
+      title:
+          'รายละเอียดข้อมูลผู้ป่วย - ${labels[_selectedSubtype] ?? ''}',
+      charts: [
+        const HighbloodScatterChartWidgetWidget(),
+        const HighBlood14090DonutWidgetWidget(),
+        const HighBloodColumChartWidgetWidget(
+          label: 'กราฟแสดงจำนวนผู้ป่วยแบ่งตามจำนวนโรคที่รับการรักษา',
+        ),
+        BMIColumChartWidgetWidget(
+          label: 'กราฟแท่งแสดงจำนวนผู้ป่วย แบ่งตามการคำนวณของค่า BMI',
+          subtype: _selectedSubtype,
+        ),
+      ],
+      gradientStart: const Color(0xFF5B9BD5),
+      gradientEnd: const Color(0xFF1E5FBB),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    if (widget.insideShell) return _buildPageContent(context);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -205,6 +416,17 @@ class _StrokeWidgetState extends State<StrokeWidget> {
                                 ('ischemic', 'Ischemic (I63)'),
                                 ('hemorrhagic', 'Hemorrhagic (I60-I62)'),
                               ],
+                              counts: {
+                                'stroke_total': scaledInt(28000),
+                                'ischemic': scaledInt(19600),
+                                'hemorrhagic': scaledInt(6160),
+                              },
+                              gradientStart:
+                                  FlutterFlowTheme.of(context).customColor10,
+                              gradientEnd:
+                                  FlutterFlowTheme.of(context).customColor9,
+                              image:
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/n-c-d-dashboad-yr2b5b/assets/u9g1m089h668/ChatGPT_Image_16_%E0%B8%95.%E0%B8%84._2568_15_01_44.png',
                               selected: _selectedSubtype,
                               onSelected: (v) => safeSetState(
                                   () => _selectedSubtype = v),
@@ -917,6 +1139,7 @@ class _StrokeWidgetState extends State<StrokeWidget> {
                                 ],
                               ),
                             ),
+                            _buildBreakdownSection(),
                           ]
                               .divide(const SizedBox(height: 16.0))
                               .around(const SizedBox(height: 16.0)),

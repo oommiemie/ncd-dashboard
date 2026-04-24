@@ -39,7 +39,7 @@ class BarChartDistrictWidgetModel
               updateFn) =>
       chart1[index] = updateFn(chart1[index]);
 
-  List<Color> color = [Color(4281040839)];
+  List<Color> color = [const Color(0xff2b7fc7)];
   void addToColor(Color item) => color.add(item);
   void removeFromColor(Color item) => color.remove(item);
   void removeAtIndexFromColor(int index) => color.removeAt(index);
@@ -65,7 +65,7 @@ class BarChartDistrictWidgetModel
               updateFn) =>
       chart2[index] = updateFn(chart2[index]);
 
-  List<Color> color2 = [Color(4283566987)];
+  List<Color> color2 = [const Color(0xff520b8b)];
   void addToColor2(Color item) => color2.add(item);
   void removeFromColor2(Color item) => color2.remove(item);
   void removeAtIndexFromColor2(int index) => color2.removeAt(index);

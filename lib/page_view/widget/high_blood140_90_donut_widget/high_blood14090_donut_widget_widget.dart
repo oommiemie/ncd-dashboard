@@ -83,7 +83,7 @@ class _HighBlood14090DonutWidgetWidgetState
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,7 +107,7 @@ class _HighBlood14090DonutWidgetWidgetState
               overflow: TextOverflow.ellipsis,
             ),
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 height: double.infinity,
                 child: u_i_library_3c2hbt_custom_widgets.DonutChart(
@@ -129,7 +129,7 @@ class _HighBlood14090DonutWidgetWidgetState
                 ),
               ),
             ),
-          ].divide(SizedBox(height: 16.0)),
+          ].divide(const SizedBox(height: 16.0)),
         ),
       ),
     );

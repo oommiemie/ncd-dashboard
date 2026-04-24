@@ -55,7 +55,7 @@ class _HighbloodScatterChartWidgetWidgetState
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,17 +79,17 @@ class _HighbloodScatterChartWidgetWidgetState
               overflow: TextOverflow.ellipsis,
             ),
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 height: double.infinity,
-                child: custom_widgets.ScatterChart(
+                child: const custom_widgets.ScatterChart(
                   width: double.infinity,
                   height: double.infinity,
                   showLegend: true,
                 ),
               ),
             ),
-          ].divide(SizedBox(height: 16.0)),
+          ].divide(const SizedBox(height: 16.0)),
         ),
       ),
     );

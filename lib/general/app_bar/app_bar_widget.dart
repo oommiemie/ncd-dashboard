@@ -24,9 +24,9 @@ class AppBarWidget extends StatefulWidget {
     bool? filterprovince,
     bool? filtermore,
     this.label,
-  })  : this.filteryear = filteryear ?? true,
-        this.filterprovince = filterprovince ?? true,
-        this.filtermore = filtermore ?? true;
+  })  : filteryear = filteryear ?? true,
+        filterprovince = filterprovince ?? true,
+        filtermore = filtermore ?? true;
 
   final bool filteryear;
   final bool filterprovince;
@@ -65,8 +65,8 @@ class _AppBarWidgetState extends State<AppBarWidget>
             curve: Curves.elasticOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.08, 1.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.08, 1.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -78,8 +78,8 @@ class _AppBarWidgetState extends State<AppBarWidget>
             curve: Curves.elasticOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.08, 1.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.08, 1.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -110,7 +110,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
       width: double.infinity,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 4.0,
             color: Color(0x1A000000),
@@ -124,7 +124,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
         borderRadius: BorderRadius.circular(100.0),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -132,7 +132,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
             Expanded(
               child: Text(
                 valueOrDefault<String>(
-                  widget!.label,
+                  widget.label,
                   'Label',
                 ),
                 maxLines: 1,
@@ -153,7 +153,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
             Row(
               mainAxisSize: MainAxisSize.max,
               children: [
-                if (_model.filterYear == widget!.filteryear)
+                if (_model.filterYear == widget.filteryear)
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -181,6 +181,13 @@ class _AppBarWidgetState extends State<AppBarWidget>
                       MouseRegion(
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered1 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered1 = false);
+                        }),
                         child: Builder(
                           builder: (context) => InkWell(
                             splashColor: Colors.transparent,
@@ -295,15 +302,8 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                   'containerOnActionTriggerAnimation1']!,
                               hasBeenTriggered: hasContainerTriggered1),
                         ),
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered1 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered1 = false);
-                        }),
                       ),
-                    ].divide(SizedBox(width: 8.0)),
+                    ].divide(const SizedBox(width: 8.0)),
                   ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
@@ -331,6 +331,12 @@ class _AppBarWidgetState extends State<AppBarWidget>
                     MouseRegion(
                       opaque: false,
                       cursor: MouseCursor.defer ?? MouseCursor.defer,
+                      onEnter: ((event) async {
+                        safeSetState(() => _model.mouseRegionHovered2 = true);
+                      }),
+                      onExit: ((event) async {
+                        safeSetState(() => _model.mouseRegionHovered2 = false);
+                      }),
                       child: Builder(
                         builder: (context) => InkWell(
                           splashColor: Colors.transparent,
@@ -445,16 +451,10 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                 'containerOnActionTriggerAnimation2']!,
                             hasBeenTriggered: hasContainerTriggered2),
                       ),
-                      onEnter: ((event) async {
-                        safeSetState(() => _model.mouseRegionHovered2 = true);
-                      }),
-                      onExit: ((event) async {
-                        safeSetState(() => _model.mouseRegionHovered2 = false);
-                      }),
                     ),
-                  ].divide(SizedBox(width: 8.0)),
+                  ].divide(const SizedBox(width: 8.0)),
                 ),
-              ].divide(SizedBox(width: 16.0)),
+              ].divide(const SizedBox(width: 16.0)),
             ),
           ],
         ),

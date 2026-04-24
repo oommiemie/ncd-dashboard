@@ -47,7 +47,7 @@ class _LgImageAvatarWidgetState extends State<LgImageAvatarWidget> {
   Widget build(BuildContext context) {
     return Image.network(
       valueOrDefault<String>(
-        widget!.image,
+        widget.image,
         'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/u-i-library-3c2hbt/assets/rcff45ja8ode/avatar-model.png',
       ),
       width: 64.0,

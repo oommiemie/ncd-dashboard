@@ -62,15 +62,15 @@ class _CardWidgetWidgetState extends State<CardWidgetWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(-25.0, -25.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(-25.0, -25.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.05, 1.05),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.05, 1.05),
           ),
         ],
       ),
@@ -82,15 +82,15 @@ class _CardWidgetWidgetState extends State<CardWidgetWidget>
             curve: Curves.easeInOut,
             delay: 20.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(-50.0, 0.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(-50.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 20.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.05, 1.05),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.05, 1.05),
           ),
         ],
       ),
@@ -102,15 +102,15 @@ class _CardWidgetWidgetState extends State<CardWidgetWidget>
             curve: Curves.easeInOut,
             delay: 140.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(-12.0, 10.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(-12.0, 10.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 140.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.05, 1.05),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.05, 1.05),
           ),
         ],
       ),
@@ -137,6 +137,48 @@ class _CardWidgetWidgetState extends State<CardWidgetWidget>
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+        if (animationsMap['circleImageOnActionTriggerAnimation1'] != null) {
+          safeSetState(() => hasCircleImageTriggered1 = true);
+          SchedulerBinding.instance.addPostFrameCallback((_) async =>
+              animationsMap['circleImageOnActionTriggerAnimation1']!
+                  .controller
+                  .forward(from: 0.0));
+        }
+        if (animationsMap['circleImageOnActionTriggerAnimation2'] != null) {
+          safeSetState(() => hasCircleImageTriggered2 = true);
+          SchedulerBinding.instance.addPostFrameCallback((_) async =>
+              animationsMap['circleImageOnActionTriggerAnimation2']!
+                  .controller
+                  .forward(from: 0.0));
+        }
+        if (animationsMap['circleImageOnActionTriggerAnimation3'] != null) {
+          safeSetState(() => hasCircleImageTriggered3 = true);
+          SchedulerBinding.instance.addPostFrameCallback((_) async =>
+              animationsMap['circleImageOnActionTriggerAnimation3']!
+                  .controller
+                  .forward(from: 0.0));
+        }
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+        if (animationsMap['circleImageOnActionTriggerAnimation1'] != null) {
+          animationsMap['circleImageOnActionTriggerAnimation1']!
+              .controller
+              .reverse();
+        }
+        if (animationsMap['circleImageOnActionTriggerAnimation2'] != null) {
+          animationsMap['circleImageOnActionTriggerAnimation2']!
+              .controller
+              .reverse();
+        }
+        if (animationsMap['circleImageOnActionTriggerAnimation3'] != null) {
+          animationsMap['circleImageOnActionTriggerAnimation3']!
+              .controller
+              .reverse();
+        }
+      }),
       child: Card(
         clipBehavior: Clip.antiAliasWithSaveLayer,
         color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -402,48 +444,6 @@ class _CardWidgetWidgetState extends State<CardWidgetWidget>
           ),
         ),
       ),
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-        if (animationsMap['circleImageOnActionTriggerAnimation1'] != null) {
-          safeSetState(() => hasCircleImageTriggered1 = true);
-          SchedulerBinding.instance.addPostFrameCallback((_) async =>
-              animationsMap['circleImageOnActionTriggerAnimation1']!
-                  .controller
-                  .forward(from: 0.0));
-        }
-        if (animationsMap['circleImageOnActionTriggerAnimation2'] != null) {
-          safeSetState(() => hasCircleImageTriggered2 = true);
-          SchedulerBinding.instance.addPostFrameCallback((_) async =>
-              animationsMap['circleImageOnActionTriggerAnimation2']!
-                  .controller
-                  .forward(from: 0.0));
-        }
-        if (animationsMap['circleImageOnActionTriggerAnimation3'] != null) {
-          safeSetState(() => hasCircleImageTriggered3 = true);
-          SchedulerBinding.instance.addPostFrameCallback((_) async =>
-              animationsMap['circleImageOnActionTriggerAnimation3']!
-                  .controller
-                  .forward(from: 0.0));
-        }
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-        if (animationsMap['circleImageOnActionTriggerAnimation1'] != null) {
-          animationsMap['circleImageOnActionTriggerAnimation1']!
-              .controller
-              .reverse();
-        }
-        if (animationsMap['circleImageOnActionTriggerAnimation2'] != null) {
-          animationsMap['circleImageOnActionTriggerAnimation2']!
-              .controller
-              .reverse();
-        }
-        if (animationsMap['circleImageOnActionTriggerAnimation3'] != null) {
-          animationsMap['circleImageOnActionTriggerAnimation3']!
-              .controller
-              .reverse();
-        }
-      }),
     );
   }
 }

@@ -1,17 +1,10 @@
 // Automatic FlutterFlow imports
-import '/backend/schema/structs/index.dart';
-import "package:u_i_library_3c2hbt/backend/schema/structs/index.dart"
-    as u_i_library_3c2hbt_data_schema;
-import "package:u_i_library_3c2hbt/backend/schema/enums/enums.dart"
-    as u_i_library_3c2hbt_enums;
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'index.dart'; // Imports other custom widgets
+// Imports other custom widgets
 import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import '/custom_code/widgets/index.dart';
 //import '/flutter_flow/custom_functions.dart';
 
 import 'package:syncfusion_flutter_maps/maps.dart';

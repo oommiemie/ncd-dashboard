@@ -46,8 +46,8 @@ class _SampleCardWidgetState extends State<SampleCardWidget> {
     return Container(
       width: 284.0,
       decoration: BoxDecoration(
-        color: Color(0xCDFFFFFF),
-        boxShadow: [
+        color: const Color(0xCDFFFFFF),
+        boxShadow: const [
           BoxShadow(
             blurRadius: 24.0,
             color: Color(0x1E14181B),
@@ -64,7 +64,7 @@ class _SampleCardWidgetState extends State<SampleCardWidget> {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +73,7 @@ class _SampleCardWidgetState extends State<SampleCardWidget> {
               width: 64.0,
               height: 64.0,
               clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
               ),
               child: Image.network(
@@ -163,7 +163,7 @@ class _SampleCardWidgetState extends State<SampleCardWidget> {
                                       .fontStyle,
                                 ),
                           ),
-                        ].divide(SizedBox(width: 4.0)),
+                        ].divide(const SizedBox(width: 4.0)),
                       ),
                       Text(
                         'Rating',
@@ -226,7 +226,7 @@ class _SampleCardWidgetState extends State<SampleCardWidget> {
                                       .fontStyle,
                                 ),
                           ),
-                        ].divide(SizedBox(width: 4.0)),
+                        ].divide(const SizedBox(width: 4.0)),
                       ),
                       Text(
                         'Service',
@@ -267,10 +267,10 @@ class _SampleCardWidgetState extends State<SampleCardWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFF0080FF),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: const Color(0xFF0080FF),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 font: GoogleFonts.ibmPlexSansThaiLooped(
@@ -302,7 +302,7 @@ class _SampleCardWidgetState extends State<SampleCardWidget> {
                   borderWidth: 1.0,
                   buttonSize: 40.0,
                   fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.bookmark_border,
                     color: Color(0xFF0080FF),
                     size: 24.0,
@@ -311,9 +311,9 @@ class _SampleCardWidgetState extends State<SampleCardWidget> {
                     print('IconButton pressed ...');
                   },
                 ),
-              ].divide(SizedBox(width: 8.0)),
+              ].divide(const SizedBox(width: 8.0)),
             ),
-          ].divide(SizedBox(height: 16.0)),
+          ].divide(const SizedBox(height: 16.0)),
         ),
       ),
     );

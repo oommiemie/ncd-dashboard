@@ -40,18 +40,18 @@ class StatsCardWidget extends StatefulWidget {
     double? valueTextSize,
     this.titleSize,
     this.unitSize,
-  })  : this.leftMargin = leftMargin ?? 8,
-        this.topMargin = topMargin ?? 8,
-        this.rightMargin = rightMargin ?? 8,
-        this.bottomMargin = bottomMargin ?? 8,
-        this.titleColor = titleColor ?? const Color(0xFF57636C),
-        this.borderRadius = borderRadius ?? 24,
-        this.shadowColor = shadowColor ?? const Color(0x1E666666),
-        this.imageWidth = imageWidth ?? 64.0,
-        this.imageHeight = imageHeight ?? 64.0,
-        this.rowPadding = rowPadding ?? 0.0,
-        this.valueUnit = valueUnit ?? 'หน่วย',
-        this.valueTextSize = valueTextSize ?? 20.0;
+  })  : leftMargin = leftMargin ?? 8,
+        topMargin = topMargin ?? 8,
+        rightMargin = rightMargin ?? 8,
+        bottomMargin = bottomMargin ?? 8,
+        titleColor = titleColor ?? const Color(0xFF57636C),
+        borderRadius = borderRadius ?? 24,
+        shadowColor = shadowColor ?? const Color(0x1E666666),
+        imageWidth = imageWidth ?? 64.0,
+        imageHeight = imageHeight ?? 64.0,
+        rowPadding = rowPadding ?? 0.0,
+        valueUnit = valueUnit ?? 'หน่วย',
+        valueTextSize = valueTextSize ?? 20.0;
 
   final String? title;
   final bool? hasShadow;
@@ -109,8 +109,8 @@ class _StatsCardWidgetState extends State<StatsCardWidget>
             curve: Curves.easeIn,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, -6.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, -6.0),
           ),
         ],
       ),
@@ -137,6 +137,22 @@ class _StatsCardWidgetState extends State<StatsCardWidget>
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+        if (animationsMap['imageOnActionTriggerAnimation'] != null) {
+          await animationsMap['imageOnActionTriggerAnimation']!
+              .controller
+              .forward(from: 0.0);
+        }
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+        if (animationsMap['imageOnActionTriggerAnimation'] != null) {
+          await animationsMap['imageOnActionTriggerAnimation']!
+              .controller
+              .reverse();
+        }
+      }),
       child: Container(
         decoration: BoxDecoration(
           boxShadow: [
@@ -330,22 +346,6 @@ class _StatsCardWidgetState extends State<StatsCardWidget>
           ),
         ),
       ),
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-        if (animationsMap['imageOnActionTriggerAnimation'] != null) {
-          await animationsMap['imageOnActionTriggerAnimation']!
-              .controller
-              .forward(from: 0.0);
-        }
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-        if (animationsMap['imageOnActionTriggerAnimation'] != null) {
-          await animationsMap['imageOnActionTriggerAnimation']!
-              .controller
-              .reverse();
-        }
-      }),
     );
   }
 }

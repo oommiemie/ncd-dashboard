@@ -38,7 +38,7 @@ class StackedCardWidget extends StatefulWidget {
     this.content,
     this.paddingBetween,
     this.underCardBorderColor,
-  }) : this.desHide = desHide ?? false;
+  }) : desHide = desHide ?? false;
 
   final String? titleText;
   final double? titleSize;
@@ -100,8 +100,8 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 10.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 10.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -119,8 +119,8 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 10.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 10.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -138,8 +138,8 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 10.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 10.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -159,68 +159,68 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(valueOrDefault<double>(
-        widget!.underCardRadius,
+        widget.underCardRadius,
         8.0,
       )),
       child: Container(
         width: valueOrDefault<double>(
-          widget!.underCardWidth,
+          widget.underCardWidth,
           400.0,
         ),
-        height: widget!.underCardHeight,
+        height: widget.underCardHeight,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
               valueOrDefault<Color>(
-                widget!.underCardPrimaryColor,
+                widget.underCardPrimaryColor,
                 FlutterFlowTheme.of(context).alternate,
               ),
               valueOrDefault<Color>(
-                widget!.underCardSecondaryColor,
+                widget.underCardSecondaryColor,
                 FlutterFlowTheme.of(context).alternate,
               )
             ],
             stops: [
               valueOrDefault<double>(
-                widget!.primaryColorPoint,
+                widget.primaryColorPoint,
                 0.0,
               ),
               valueOrDefault<double>(
-                widget!.secondaryColorPoint,
+                widget.secondaryColorPoint,
                 0.0,
               )
             ],
             begin: AlignmentDirectional(
                 computeGradientAlignmentX(valueOrDefault<double>(
-                  widget!.underCardGradientAngle,
+                  widget.underCardGradientAngle,
                   0.0,
                 )),
                 computeGradientAlignmentY(valueOrDefault<double>(
-                  widget!.underCardGradientAngle,
+                  widget.underCardGradientAngle,
                   0.0,
                 ))),
             end: AlignmentDirectional(
                 -1 *
                     computeGradientAlignmentX(valueOrDefault<double>(
-                      widget!.underCardGradientAngle,
+                      widget.underCardGradientAngle,
                       0.0,
                     )),
                 -1 *
                     computeGradientAlignmentY(valueOrDefault<double>(
-                      widget!.underCardGradientAngle,
+                      widget.underCardGradientAngle,
                       0.0,
                     ))),
           ),
           borderRadius: BorderRadius.circular(valueOrDefault<double>(
-            widget!.underCardRadius,
+            widget.underCardRadius,
             8.0,
           )),
           border: Border.all(
             color: valueOrDefault<Color>(
-              widget!.underCardBorderColor,
+              widget.underCardBorderColor,
               Colors.transparent,
             ),
-            width: widget!.underCardBorder!,
+            width: widget.underCardBorder!,
           ),
         ),
         child: Column(
@@ -229,11 +229,11 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
-              alignment: AlignmentDirectional(1.0, 0.0),
+              alignment: const AlignmentDirectional(1.0, 0.0),
               children: [
                 Padding(
                   padding: EdgeInsets.all(valueOrDefault<double>(
-                    widget!.underCardMargin,
+                    widget.underCardMargin,
                     8.0,
                   )),
                   child: Flex(
@@ -247,7 +247,7 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
                         children: [
                           Text(
                             valueOrDefault<String>(
-                              widget!.titleText,
+                              widget.titleText,
                               'titleText',
                             ),
                             style: FlutterFlowTheme.of(context)
@@ -260,11 +260,11 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
                                         .fontStyle,
                                   ),
                                   color: valueOrDefault<Color>(
-                                    widget!.titleColor,
+                                    widget.titleColor,
                                     FlutterFlowTheme.of(context).primaryText,
                                   ),
                                   fontSize: valueOrDefault<double>(
-                                    widget!.titleSize,
+                                    widget.titleSize,
                                     16.0,
                                   ),
                                   letterSpacing: 0.0,
@@ -274,10 +274,10 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
                                       .fontStyle,
                                 ),
                           ),
-                          if (widget!.desHide)
+                          if (widget.desHide)
                             Text(
                               valueOrDefault<String>(
-                                widget!.desText,
+                                widget.desText,
                                 'desText',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -292,12 +292,12 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
                                           .fontStyle,
                                     ),
                                     color: valueOrDefault<Color>(
-                                      widget!.desColor,
+                                      widget.desColor,
                                       FlutterFlowTheme.of(context)
                                           .secondaryText,
                                     ),
                                     fontSize: valueOrDefault<double>(
-                                      widget!.desSize,
+                                      widget.desSize,
                                       14.0,
                                     ),
                                     letterSpacing: 0.0,
@@ -319,24 +319,24 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
                       0.0,
                       0.0,
                       valueOrDefault<double>(
-                        widget!.underCardMargin,
+                        widget.underCardMargin,
                         0.0,
                       ),
                       0.0),
                   child: Container(
                     width: valueOrDefault<double>(
-                      widget!.illustrationWidth,
+                      widget.illustrationWidth,
                       40.0,
                     ),
                     height: valueOrDefault<double>(
-                      widget!.illustrationHeight,
+                      widget.illustrationHeight,
                       40.0,
                     ),
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: Builder(builder: (_) {
                       return widget.illustration != null
                           ? widget.illustration!()
-                          : SizedBox.shrink();
+                          : const SizedBox.shrink();
                     }),
                   ),
                 ),
@@ -344,28 +344,28 @@ class _StackedCardWidgetState extends State<StackedCardWidget>
             ).animateOnPageLoad(animationsMap['stackOnPageLoadAnimation']!),
             ClipRRect(
               borderRadius: BorderRadius.circular(valueOrDefault<double>(
-                widget!.underCardRadius,
+                widget.underCardRadius,
                 8.0,
               )),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(valueOrDefault<double>(
-                    widget!.underCardRadius,
+                    widget.underCardRadius,
                     8.0,
                   )),
                 ),
                 child: Builder(builder: (_) {
                   return widget.content != null
                       ? widget.content!()
-                      : SizedBox.shrink();
+                      : const SizedBox.shrink();
                 }),
               ),
             ).animateOnPageLoad(
                 animationsMap['containerOnPageLoadAnimation2']!),
           ].divide(SizedBox(
               height: valueOrDefault<double>(
-            widget!.paddingBetween,
+            widget.paddingBetween,
             8.0,
           ))),
         ),

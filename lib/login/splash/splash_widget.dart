@@ -40,15 +40,16 @@ class _SplashWidgetState extends State<SplashWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await Future.delayed(
-        Duration(
+        const Duration(
           milliseconds: 2000,
         ),
       );
 
-      context.pushNamed(
+      if (!context.mounted) return;
+      context.goNamed(
         MainPageWidget.routeName,
         extra: <String, dynamic>{
-          '__transition_info__': TransitionInfo(
+          '__transition_info__': const TransitionInfo(
             hasTransition: true,
             transitionType: PageTransitionType.fade,
           ),
@@ -71,8 +72,8 @@ class _SplashWidgetState extends State<SplashWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 100.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 100.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -83,8 +84,8 @@ class _SplashWidgetState extends State<SplashWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.5, 0.5),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.5, 0.5),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -110,7 +111,7 @@ class _SplashWidgetState extends State<SplashWidget>
           wrapWithModel(
             model: _model.backgroundModel,
             updateCallback: () => safeSetState(() {}),
-            child: Hero(
+            child: const Hero(
               tag: 'bg',
               transitionOnUserGestures: true,
               child: Material(
@@ -122,7 +123,7 @@ class _SplashWidgetState extends State<SplashWidget>
           Opacity(
             opacity: 0.4,
             child: Align(
-              alignment: AlignmentDirectional(0.0, 1.0),
+              alignment: const AlignmentDirectional(0.0, 1.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
                 child: Image.asset(
@@ -130,13 +131,13 @@ class _SplashWidgetState extends State<SplashWidget>
                   width: double.infinity,
                   height: double.infinity,
                   fit: BoxFit.cover,
-                  alignment: Alignment(1.0, -1.0),
+                  alignment: const Alignment(1.0, -1.0),
                 ),
               ).animateOnPageLoad(animationsMap['imageOnPageLoadAnimation']!),
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
               padding: EdgeInsets.all(valueOrDefault<double>(
                 () {
@@ -158,7 +159,7 @@ class _SplashWidgetState extends State<SplashWidget>
                 width: 500.0,
                 height: 500.0,
                 decoration: BoxDecoration(
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 16.0,
                       color: Color(0x1A000000),
@@ -182,7 +183,7 @@ class _SplashWidgetState extends State<SplashWidget>
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        color: Color(0xE5FFFFFF),
+                        color: const Color(0xE5FFFFFF),
                         borderRadius: BorderRadius.circular(34.0),
                         border: Border.all(
                           color: Colors.white,
@@ -218,7 +219,7 @@ class _SplashWidgetState extends State<SplashWidget>
                                   width: 100.0,
                                   height: 100.0,
                                   clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
                                   child: Image.asset(
@@ -298,7 +299,7 @@ class _SplashWidgetState extends State<SplashWidget>
                                         lineHeight: 1.8,
                                       ),
                                 ),
-                              ].divide(SizedBox(height: 8.0)),
+                              ].divide(const SizedBox(height: 8.0)),
                             ),
                             Text(
                               'เวอร์ชั่น 1.0.0',

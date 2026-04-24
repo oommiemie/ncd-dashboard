@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:ff_commons/flutter_flow/enums.dart';
 export 'package:ff_commons/flutter_flow/enums.dart';
 

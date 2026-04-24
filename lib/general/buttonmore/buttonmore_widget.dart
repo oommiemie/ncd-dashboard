@@ -48,8 +48,8 @@ class _ButtonmoreWidgetState extends State<ButtonmoreWidget>
             curve: Curves.elasticOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.08, 1.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.08, 1.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -76,6 +76,12 @@ class _ButtonmoreWidgetState extends State<ButtonmoreWidget>
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+      }),
       child: AlignedTooltip(
         content: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 12.0, 6.0),
@@ -167,12 +173,6 @@ class _ButtonmoreWidgetState extends State<ButtonmoreWidget>
               hasBeenTriggered: hasContainerTriggered),
         ),
       ),
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-      }),
     );
   }
 }

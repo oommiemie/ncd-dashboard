@@ -195,7 +195,7 @@ class _BarChartDistrictWidgetWidgetState
         borderRadius: BorderRadius.circular(34.0),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -231,7 +231,7 @@ class _BarChartDistrictWidgetWidgetState
                 wrapWithModel(
                   model: _model.buttonmoreModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: ButtonmoreWidget(),
+                  child: const ButtonmoreWidget(),
                 ),
               ],
             ),
@@ -255,7 +255,7 @@ class _BarChartDistrictWidgetWidgetState
               crossAxisSpacing: 16.0,
               mainAxisSpacing: 16.0,
               itemCount: 2,
-              padding: EdgeInsets.fromLTRB(
+              padding: const EdgeInsets.fromLTRB(
                 0,
                 0,
                 0,
@@ -281,11 +281,11 @@ class _BarChartDistrictWidgetWidgetState
                                       .primaryBackground,
                                   borderRadius: BorderRadius.circular(100.0),
                                   border: Border.all(
-                                    color: Color(0x1AFFFFFF),
+                                    color: const Color(0x1AFFFFFF),
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(2.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
@@ -303,13 +303,13 @@ class _BarChartDistrictWidgetWidgetState
                                             color: _model.pageview == 1
                                                 ? FlutterFlowTheme.of(context)
                                                     .primary
-                                                : Color(0x00000000),
+                                                : const Color(0x00000000),
                                             borderRadius:
                                                 BorderRadius.circular(100.0),
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 8.0),
                                             child: Text(
                                               'จำนวนผู้ป่วย',
@@ -360,13 +360,13 @@ class _BarChartDistrictWidgetWidgetState
                                             color: _model.pageview == 2
                                                 ? FlutterFlowTheme.of(context)
                                                     .customColor3
-                                                : Color(0x00000000),
+                                                : const Color(0x00000000),
                                             borderRadius:
                                                 BorderRadius.circular(100.0),
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 8.0),
                                             child: Text(
                                               'อัตราผู้ป่วยต่อต่อแสนประชากร',
@@ -403,7 +403,7 @@ class _BarChartDistrictWidgetWidgetState
                                           ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 8.0)),
+                                    ].divide(const SizedBox(width: 8.0)),
                                   ),
                                 ),
                               ),
@@ -412,7 +412,7 @@ class _BarChartDistrictWidgetWidgetState
                           Builder(
                             builder: (context) {
                               if (_model.pageview == 1) {
-                                return Container(
+                                return SizedBox(
                                   width: double.infinity,
                                   height: 490.0,
                                   child: u_i_library_3c2hbt_custom_widgets
@@ -434,7 +434,7 @@ class _BarChartDistrictWidgetWidgetState
                                         .secondaryText,
                                     showLegend: false,
                                     legendFontSize: 12.0,
-                                    tooltipColor: Color(0xFF054F8D),
+                                    tooltipColor: const Color(0xFF054F8D),
                                     tooltipTextColor:
                                         FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -446,7 +446,7 @@ class _BarChartDistrictWidgetWidgetState
                                   ),
                                 );
                               } else if (_model.pageview == 2) {
-                                return Container(
+                                return SizedBox(
                                   width: double.infinity,
                                   height: 490.0,
                                   child: u_i_library_3c2hbt_custom_widgets
@@ -468,7 +468,7 @@ class _BarChartDistrictWidgetWidgetState
                                         .secondaryText,
                                     showLegend: false,
                                     legendFontSize: 12.0,
-                                    tooltipColor: Color(0xFF4C0585),
+                                    tooltipColor: const Color(0xFF4C0585),
                                     tooltipTextColor:
                                         FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -480,23 +480,23 @@ class _BarChartDistrictWidgetWidgetState
                                   ),
                                 );
                               } else {
-                                return Column(
+                                return const Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [],
                                 );
                               }
                             },
                           ),
-                        ].divide(SizedBox(height: 16.0)),
+                        ].divide(const SizedBox(height: 16.0)),
                       ),
                   () => Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0x80F5F5F5),
+                          color: const Color(0x80F5F5F5),
                           borderRadius: BorderRadius.circular(34.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -504,7 +504,7 @@ class _BarChartDistrictWidgetWidgetState
                                 width: double.infinity,
                                 height: 56.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0x3324B8C2),
+                                  color: const Color(0x3324B8C2),
                                   borderRadius: BorderRadius.circular(100.0),
                                 ),
                                 child: Row(
@@ -514,13 +514,13 @@ class _BarChartDistrictWidgetWidgetState
                                       child: Container(
                                         width: 100.0,
                                         height: double.infinity,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'กลุ่มโรค',
@@ -538,7 +538,7 @@ class _BarChartDistrictWidgetWidgetState
                                                               .bodySmall
                                                               .fontStyle,
                                                     ),
-                                                    color: Color(0xFF057780),
+                                                    color: const Color(0xFF057780),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                     fontStyle:
@@ -556,10 +556,10 @@ class _BarChartDistrictWidgetWidgetState
                                       child: Container(
                                         width: 100.0,
                                         height: double.infinity,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             'จำนวนผู้ป่วย',
                                             textAlign: TextAlign.center,
@@ -575,7 +575,7 @@ class _BarChartDistrictWidgetWidgetState
                                                             .bodySmall
                                                             .fontStyle,
                                                   ),
-                                                  color: Color(0xFF057780),
+                                                  color: const Color(0xFF057780),
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                   fontStyle:
@@ -592,10 +592,10 @@ class _BarChartDistrictWidgetWidgetState
                                       child: Container(
                                         width: 100.0,
                                         height: double.infinity,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             'อัตราผู้ป่วยต่อแสนประชากร',
                                             textAlign: TextAlign.center,
@@ -611,7 +611,7 @@ class _BarChartDistrictWidgetWidgetState
                                                             .bodySmall
                                                             .fontStyle,
                                                   ),
-                                                  color: Color(0xFF057780),
+                                                  color: const Color(0xFF057780),
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                   fontStyle:
@@ -633,7 +633,7 @@ class _BarChartDistrictWidgetWidgetState
                                   wrapWithModel(
                                     model: _model.itemTablePatientModel1,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ItemTablePatientWidget(
+                                    child: const ItemTablePatientWidget(
                                       nameNCD: 'ถุงลมโป่งพองเรื้อรัง',
                                       num1: 4244.0,
                                       num2: 42424.0,
@@ -642,7 +642,7 @@ class _BarChartDistrictWidgetWidgetState
                                   wrapWithModel(
                                     model: _model.itemTablePatientModel2,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ItemTablePatientWidget(
+                                    child: const ItemTablePatientWidget(
                                       nameNCD: 'ความดันโลหิตสูง',
                                       num1: 4414.0,
                                       num2: 2424.0,
@@ -651,7 +651,7 @@ class _BarChartDistrictWidgetWidgetState
                                   wrapWithModel(
                                     model: _model.itemTablePatientModel3,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ItemTablePatientWidget(
+                                    child: const ItemTablePatientWidget(
                                       nameNCD: 'ไตวาย',
                                       num1: 4414.0,
                                       num2: 2424.0,
@@ -660,7 +660,7 @@ class _BarChartDistrictWidgetWidgetState
                                   wrapWithModel(
                                     model: _model.itemTablePatientModel4,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ItemTablePatientWidget(
+                                    child: const ItemTablePatientWidget(
                                       nameNCD: 'เบาหวาน',
                                       num1: 31414.0,
                                       num2: 2424.0,
@@ -669,7 +669,7 @@ class _BarChartDistrictWidgetWidgetState
                                   wrapWithModel(
                                     model: _model.itemTablePatientModel5,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ItemTablePatientWidget(
+                                    child: const ItemTablePatientWidget(
                                       nameNCD: 'มะเร็งทุกชนิด',
                                       num1: 31414.0,
                                       num2: 2424.0,
@@ -678,7 +678,7 @@ class _BarChartDistrictWidgetWidgetState
                                   wrapWithModel(
                                     model: _model.itemTablePatientModel6,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ItemTablePatientWidget(
+                                    child: const ItemTablePatientWidget(
                                       nameNCD: 'จิตเวชและสารเสพติด',
                                       num1: 31414.0,
                                       num2: 2424.0,
@@ -687,7 +687,7 @@ class _BarChartDistrictWidgetWidgetState
                                   wrapWithModel(
                                     model: _model.itemTablePatientModel7,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ItemTablePatientWidget(
+                                    child: const ItemTablePatientWidget(
                                       nameNCD: 'หลอดเลือดสมอง',
                                       num1: 31414.0,
                                       num2: 2424.0,
@@ -696,7 +696,7 @@ class _BarChartDistrictWidgetWidgetState
                                   wrapWithModel(
                                     model: _model.itemTablePatientModel8,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ItemTablePatientWidget(
+                                    child: const ItemTablePatientWidget(
                                       nameNCD: 'หลอดเลือดหัวใจ',
                                       num1: 31414.0,
                                       num2: 2424.0,
@@ -705,7 +705,7 @@ class _BarChartDistrictWidgetWidgetState
                                   wrapWithModel(
                                     model: _model.itemTablePatientModel9,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ItemTablePatientWidget(
+                                    child: const ItemTablePatientWidget(
                                       nameNCD: 'ไขมันในเลือดสูง',
                                       num1: 31414.0,
                                       num2: 2424.0,
@@ -714,7 +714,7 @@ class _BarChartDistrictWidgetWidgetState
                                   wrapWithModel(
                                     model: _model.itemTablePatientModel10,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: ItemTablePatientWidget(
+                                    child: const ItemTablePatientWidget(
                                       nameNCD: 'ปอดอักเสบจากการสูบบุหรี่ไฟฟ้า',
                                       num1: 31414.0,
                                       num2: 2424.0,
@@ -729,7 +729,7 @@ class _BarChartDistrictWidgetWidgetState
                 ][index]();
               },
             ),
-          ].divide(SizedBox(height: 16.0)),
+          ].divide(const SizedBox(height: 16.0)),
         ),
       ),
     );

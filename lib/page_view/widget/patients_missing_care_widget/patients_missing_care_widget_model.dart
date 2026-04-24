@@ -37,7 +37,7 @@ class PatientsMissingCareWidgetModel
               updateFn) =>
       chart[index] = updateFn(chart[index]);
 
-  List<Color> color = [Color(4278223871), Color(4294455611)];
+  List<Color> color = [const Color(0xff0083ff), const Color(0xfff8313b)];
   void addToColor(Color item) => color.add(item);
   void removeFromColor(Color item) => color.remove(item);
   void removeAtIndexFromColor(int index) => color.removeAt(index);

@@ -50,7 +50,7 @@ class _NCDCasesByGenderWidgetWidgetState
         borderRadius: BorderRadius.circular(34.0),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,20 +93,20 @@ class _NCDCasesByGenderWidgetWidgetState
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                Color(0xFF01D8E6),
+                                const Color(0xFF01D8E6),
                                 FlutterFlowTheme.of(context).primary
                               ],
-                              stops: [0.0, 1.0],
-                              begin: AlignmentDirectional(1.0, 0.0),
-                              end: AlignmentDirectional(-1.0, 0),
+                              stops: const [0.0, 1.0],
+                              begin: const AlignmentDirectional(1.0, 0.0),
+                              end: const AlignmentDirectional(-1.0, 0),
                             ),
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(100.0),
                               bottomLeft: Radius.circular(100.0),
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -119,12 +119,12 @@ class _NCDCasesByGenderWidgetWidgetState
                                     shape: BoxShape.circle,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.all(8.0),
                                     child: Container(
                                       width: 200.0,
                                       height: 200.0,
                                       clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
                                       child: Image.asset(
@@ -160,7 +160,7 @@ class _NCDCasesByGenderWidgetWidgetState
                                         ),
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 16.0)),
+                              ].divide(const SizedBox(width: 16.0)),
                             ),
                           ),
                         ),
@@ -172,19 +172,19 @@ class _NCDCasesByGenderWidgetWidgetState
                             gradient: LinearGradient(
                               colors: [
                                 FlutterFlowTheme.of(context).customColor4,
-                                Color(0xFFD672F8)
+                                const Color(0xFFD672F8)
                               ],
-                              stops: [0.0, 1.0],
-                              begin: AlignmentDirectional(1.0, 0.0),
-                              end: AlignmentDirectional(-1.0, 0),
+                              stops: const [0.0, 1.0],
+                              begin: const AlignmentDirectional(1.0, 0.0),
+                              end: const AlignmentDirectional(-1.0, 0),
                             ),
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(100.0),
                               bottomRight: Radius.circular(100.0),
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -224,12 +224,12 @@ class _NCDCasesByGenderWidgetWidgetState
                                     shape: BoxShape.circle,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.all(8.0),
                                     child: Container(
                                       width: 200.0,
                                       height: 200.0,
                                       clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
                                       child: Image.asset(
@@ -239,7 +239,7 @@ class _NCDCasesByGenderWidgetWidgetState
                                     ),
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 16.0)),
+                              ].divide(const SizedBox(width: 16.0)),
                             ),
                           ),
                         ),
@@ -247,9 +247,9 @@ class _NCDCasesByGenderWidgetWidgetState
                     ],
                   ),
                 ),
-              ].divide(SizedBox(width: 8.0)),
+              ].divide(const SizedBox(width: 8.0)),
             ),
-          ].divide(SizedBox(height: 16.0)),
+          ].divide(const SizedBox(height: 16.0)),
         ),
       ),
     );

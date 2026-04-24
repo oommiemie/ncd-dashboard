@@ -38,12 +38,12 @@ class DiseaseTreatmentCountDonutWigetModel
       chart[index] = updateFn(chart[index]);
 
   List<Color> color = [
-    Color(4281040839),
-    Color(4278757187),
-    Color(4287835365),
-    Color(4289665566),
-    Color(4292183840),
-    Color(4292821482)
+    const Color(0xff2b7fc7),
+    const Color(0xff08a743),
+    const Color(0xff932ce5),
+    const Color(0xffaf1a1e),
+    const Color(0xffd58720),
+    const Color(0xffdf41ea)
   ];
   void addToColor(Color item) => color.add(item);
   void removeFromColor(Color item) => color.remove(item);

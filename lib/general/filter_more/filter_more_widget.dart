@@ -45,8 +45,8 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
             curve: Curves.bounceOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.1, 1.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.1, 1.0),
+            end: const Offset(1.0, 1.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -78,10 +78,10 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
       child: Container(
         decoration: BoxDecoration(
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 8.0,
               color: Color(0x25000000),
@@ -104,15 +104,15 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
             child: Container(
               width: 380.0,
               decoration: BoxDecoration(
-                color: Color(0xB2FFFFFF),
+                color: const Color(0xB2FFFFFF),
                 borderRadius: BorderRadius.circular(34.0),
                 border: Border.all(
-                  color: Color(0xCBFFFFFF),
+                  color: const Color(0xCBFFFFFF),
                   width: 2.0,
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -147,6 +147,14 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
                           MouseRegion(
                             opaque: false,
                             cursor: MouseCursor.defer ?? MouseCursor.defer,
+                            onEnter: ((event) async {
+                              safeSetState(
+                                  () => _model.mouseRegionHovered = true);
+                            }),
+                            onExit: ((event) async {
+                              safeSetState(
+                                  () => _model.mouseRegionHovered = false);
+                            }),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -203,14 +211,6 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
                                 ),
                               ),
                             ),
-                            onEnter: ((event) async {
-                              safeSetState(
-                                  () => _model.mouseRegionHovered = true);
-                            }),
-                            onExit: ((event) async {
-                              safeSetState(
-                                  () => _model.mouseRegionHovered = false);
-                            }),
                           ),
                         ],
                       ),
@@ -222,7 +222,7 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
                           borderRadius: BorderRadius.circular(24.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -303,7 +303,7 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
                                   ),
                                 ],
                               ),
-                            ].divide(SizedBox(height: 8.0)),
+                            ].divide(const SizedBox(height: 8.0)),
                           ),
                         ),
                       ),
@@ -315,7 +315,7 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
                           borderRadius: BorderRadius.circular(24.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -480,7 +480,7 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
                                   ),
                                 ],
                               ),
-                            ].divide(SizedBox(height: 8.0)),
+                            ].divide(const SizedBox(height: 8.0)),
                           ),
                         ),
                       ),
@@ -492,7 +492,7 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
                           borderRadius: BorderRadius.circular(24.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -574,11 +574,11 @@ class _FilterMoreWidgetState extends State<FilterMoreWidget>
                                   ),
                                 ],
                               ),
-                            ].divide(SizedBox(height: 8.0)),
+                            ].divide(const SizedBox(height: 8.0)),
                           ),
                         ),
                       ),
-                    ].divide(SizedBox(height: 16.0)),
+                    ].divide(const SizedBox(height: 16.0)),
                   ),
                 ),
               ),

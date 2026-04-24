@@ -12,7 +12,7 @@ class XlRoundedAvatarWidget extends StatefulWidget {
     super.key,
     required this.image,
     double? radius,
-  }) : this.radius = radius ?? 8.0;
+  }) : radius = radius ?? 8.0;
 
   final String? image;
   final double radius;
@@ -49,7 +49,7 @@ class _XlRoundedAvatarWidgetState extends State<XlRoundedAvatarWidget> {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(valueOrDefault<double>(
-        widget!.radius,
+        widget.radius,
         8.0,
       )),
       child: Container(
@@ -57,19 +57,19 @@ class _XlRoundedAvatarWidgetState extends State<XlRoundedAvatarWidget> {
         height: 80.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(valueOrDefault<double>(
-            widget!.radius,
+            widget.radius,
             8.0,
           )),
         ),
-        alignment: AlignmentDirectional(0.0, 0.0),
+        alignment: const AlignmentDirectional(0.0, 0.0),
         child: Image.network(
           valueOrDefault<String>(
-            widget!.image,
+            widget.image,
             'https://images.unsplash.com/photo-1505033575518-a36ea2ef75ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMXx8cHJvZmlsZXxlbnwwfHx8fDE3NjM0NDI0NDF8MA&ixlib=rb-4.1.0&q=80&w=1080',
           ),
           width: double.infinity,
           fit: BoxFit.cover,
-          alignment: Alignment(0.0, 0.0),
+          alignment: const Alignment(0.0, 0.0),
         ),
       ),
     );

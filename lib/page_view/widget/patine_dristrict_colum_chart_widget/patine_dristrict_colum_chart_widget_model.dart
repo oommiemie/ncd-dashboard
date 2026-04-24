@@ -37,7 +37,7 @@ class PatineDristrictColumChartWidgetModel
               updateFn) =>
       chart[index] = updateFn(chart[index]);
 
-  List<Color> color = [Color(4278757187), Color(4280596674)];
+  List<Color> color = [const Color(0xff08a743), const Color(0xff24b8c2)];
   void addToColor(Color item) => color.add(item);
   void removeFromColor(Color item) => color.remove(item);
   void removeAtIndexFromColor(int index) => color.removeAt(index);

@@ -66,7 +66,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
             0.0,
           )),
       child: ClipRRect(
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(24.0),
           topRight: Radius.circular(24.0),
           bottomLeft: Radius.circular(24.0),
@@ -77,7 +77,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
           height: MediaQuery.sizeOf(context).height * 0.9,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(24.0),
               topRight: Radius.circular(24.0),
               bottomLeft: Radius.circular(24.0),
@@ -90,11 +90,11 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
                     child: Container(
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 12.0,
                             color: Color(0x10000000),
@@ -106,7 +106,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                         ],
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -114,11 +114,11 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                             Container(
                               width: 32.0,
                               height: 32.0,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Color(0x1A4B39EF),
                                 shape: BoxShape.circle,
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Icon(
                                 Icons.new_label_outlined,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -148,7 +148,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                             FlutterFlowIconButton(
                               borderRadius: 24.0,
                               buttonSize: 32.0,
-                              fillColor: Color(0x651F1F1F),
+                              fillColor: const Color(0x651F1F1F),
                               icon: Icon(
                                 Icons.close_rounded,
                                 color: FlutterFlowTheme.of(context).info,
@@ -158,7 +158,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                 print('IconButton pressed ...');
                               },
                             ),
-                          ].divide(SizedBox(width: 8.0)),
+                          ].divide(const SizedBox(width: 8.0)),
                         ),
                       ),
                     ),
@@ -175,12 +175,12 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Stack(
-                                alignment: AlignmentDirectional(1.0, 1.0),
+                                alignment: const AlignmentDirectional(1.0, 1.0),
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: Container(
                                       width: 100.0,
@@ -206,7 +206,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                     buttonSize: 36.0,
                                     fillColor:
                                         FlutterFlowTheme.of(context).primary,
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.edit_rounded,
                                       color: Colors.white,
                                       size: 18.0,
@@ -219,7 +219,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 8.0, 16.0, 8.0),
                               child: Text(
                                 'ตั้งชื่อกลุ่ม',
@@ -241,7 +241,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 12.0),
                               child: TextFormField(
                                 controller: _model.textController1,
@@ -354,7 +354,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 8.0),
                               child: Text(
                                 'คำอธิบายเกี่ยวกับกลุ่ม',
@@ -376,7 +376,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 12.0),
                               child: TextFormField(
                                 controller: _model.textController2,
@@ -491,7 +491,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 8.0),
                               child: Text(
                                 'สิทธิการเข้ากลุ่ม',
@@ -513,13 +513,13 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Stack(
-                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    alignment: const AlignmentDirectional(1.0, 0.0),
                                     children: [
                                       InkWell(
                                         splashColor: Colors.transparent,
@@ -554,7 +554,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -649,10 +649,10 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                                 ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(height: 8.0)),
+                                                        const SizedBox(height: 8.0)),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                         ),
@@ -668,7 +668,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                           opacity: 0.0,
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, 0.0),
+                                                const AlignmentDirectional(1.0, 0.0),
                                             child: Theme(
                                               data: ThemeData(
                                                 checkboxTheme:
@@ -711,7 +711,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .alternate!,
+                                                                .alternate,
                                                       )
                                                     : null,
                                                 activeColor:
@@ -727,11 +727,11 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                     ],
                                   ),
                                   Stack(
-                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    alignment: const AlignmentDirectional(1.0, 0.0),
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -745,7 +745,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                             if (_model.checkboxPrivateValue ==
                                                 true) {
                                               await Future.delayed(
-                                                Duration(
+                                                const Duration(
                                                   milliseconds: 100,
                                                 ),
                                               );
@@ -755,7 +755,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                 _model.createScrollController!
                                                     .position.maxScrollExtent,
                                                 duration:
-                                                    Duration(milliseconds: 100),
+                                                    const Duration(milliseconds: 100),
                                                 curve: Curves.ease,
                                               );
                                             }
@@ -784,7 +784,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -883,12 +883,12 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                                         .fontStyle,
                                                                   ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 8.0)),
+                                                        const SizedBox(width: 8.0)),
                                                   ),
                                                   if (_model
                                                           .checkboxPrivateValue ==
@@ -972,7 +972,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(8.0),
                                                               child: Row(
                                                                 mainAxisSize:
@@ -1019,7 +1019,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                               ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               height: 4.0)),
                                                                     ),
                                                                   ),
@@ -1057,7 +1057,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                                               null)
                                                                           ? BorderSide(
                                                                               width: 2,
-                                                                              color: FlutterFlowTheme.of(context).alternate!,
+                                                                              color: FlutterFlowTheme.of(context).alternate,
                                                                             )
                                                                           : null,
                                                                       activeColor:
@@ -1118,7 +1118,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(8.0),
                                                               child: Row(
                                                                 mainAxisSize:
@@ -1165,7 +1165,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                               ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               height: 4.0)),
                                                                     ),
                                                                   ),
@@ -1203,7 +1203,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                                               null)
                                                                           ? BorderSide(
                                                                               width: 2,
-                                                                              color: FlutterFlowTheme.of(context).alternate!,
+                                                                              color: FlutterFlowTheme.of(context).alternate,
                                                                             )
                                                                           : null,
                                                                       activeColor:
@@ -1219,10 +1219,10 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           height: 8.0)),
                                                     ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                           ),
@@ -1239,7 +1239,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                           opacity: 0.0,
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, 0.0),
+                                                const AlignmentDirectional(1.0, 0.0),
                                             child: Theme(
                                               data: ThemeData(
                                                 checkboxTheme:
@@ -1282,7 +1282,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .alternate!,
+                                                                .alternate,
                                                       )
                                                     : null,
                                                 activeColor:
@@ -1297,10 +1297,10 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                                         ),
                                     ],
                                   ),
-                                ].divide(SizedBox(height: 8.0)),
+                                ].divide(const SizedBox(height: 8.0)),
                               ),
                             ),
-                          ].addToEnd(SizedBox(height: 120.0)),
+                          ].addToEnd(const SizedBox(height: 120.0)),
                         ),
                       ),
                     ),
@@ -1308,11 +1308,11 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                 ],
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 1.0),
+                alignment: const AlignmentDirectional(0.0, 1.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 8.0,
                         color: Color(0x33000000),
@@ -1322,14 +1322,14 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                         ),
                       )
                     ],
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(24.0),
                       bottomRight: Radius.circular(24.0),
                     ),
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 24.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 24.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -1341,9 +1341,9 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                             text: 'ย้อนกลับ',
                             options: FFButtonOptions(
                               height: 52.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: Colors.white,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1378,9 +1378,9 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                             text: 'สร้างกลุ่ม',
                             options: FFButtonOptions(
                               height: 52.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1404,7 +1404,7 @@ class _CreateChannelWidgetState extends State<CreateChannelWidget> {
                             ),
                           ),
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ),
                 ),

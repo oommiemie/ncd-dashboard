@@ -42,7 +42,7 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
       _model.skeleton = true;
       safeSetState(() {});
       await Future.delayed(
-        Duration(
+        const Duration(
           milliseconds: 6000,
         ),
       );
@@ -73,12 +73,12 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Container(
               width: 400.0,
               decoration: BoxDecoration(
-                color: Color(0xCDFFFFFF),
-                boxShadow: [
+                color: const Color(0xCDFFFFFF),
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 12.0,
                     color: Color(0x14000000),
@@ -95,7 +95,7 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(24.0),
+                padding: const EdgeInsets.all(24.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -103,11 +103,11 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                     Stack(
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Color(0xE6FFFFFF),
-                              boxShadow: [
+                              color: const Color(0xE6FFFFFF),
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 12.0,
                                   color: Color(0x1E666666),
@@ -124,7 +124,7 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment:
@@ -135,7 +135,7 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                                     width: 64.0,
                                     height: 64.0,
                                     decoration: BoxDecoration(
-                                      color: Color(0xFFEFEFFF),
+                                      color: const Color(0xFFEFEFFF),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     child: Icon(
@@ -165,7 +165,7 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                                                           .bodyLarge
                                                           .fontStyle,
                                                 ),
-                                                color: Color(0xFF3C3C3C),
+                                                color: const Color(0xFF3C3C3C),
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                                 fontStyle:
@@ -241,9 +241,9 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                                                                 .fontStyle,
                                                       ),
                                             ),
-                                          ].divide(SizedBox(width: 4.0)),
+                                          ].divide(const SizedBox(width: 4.0)),
                                         ),
-                                      ].divide(SizedBox(height: 2.0)),
+                                      ].divide(const SizedBox(height: 2.0)),
                                     ),
                                   ),
                                   Expanded(
@@ -257,12 +257,12 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           width: double.infinity,
                           height: 80.0,
                           child: custom_widgets.RippleWrapper(
@@ -280,11 +280,11 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                       ],
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Color(0xE6FFFFFF),
-                          boxShadow: [
+                          color: const Color(0xE6FFFFFF),
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 12.0,
                               color: Color(0x1E666666),
@@ -301,7 +301,7 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -311,7 +311,7 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                                 width: 64.0,
                                 height: 64.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFFFE4E5),
+                                  color: const Color(0xFFFFE4E5),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Icon(
@@ -338,7 +338,7 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                                                       .bodyLarge
                                                       .fontStyle,
                                             ),
-                                            color: Color(0xFF3C3C3C),
+                                            color: const Color(0xFF3C3C3C),
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             fontStyle:
@@ -407,9 +407,9 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                                                         .fontStyle,
                                               ),
                                         ),
-                                      ].divide(SizedBox(width: 4.0)),
+                                      ].divide(const SizedBox(width: 4.0)),
                                     ),
-                                  ].divide(SizedBox(height: 2.0)),
+                                  ].divide(const SizedBox(height: 2.0)),
                                 ),
                               ),
                               Expanded(
@@ -422,21 +422,21 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(const SizedBox(width: 8.0)),
                           ),
                         ),
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.cardModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: CardWidget(),
+                        child: const CardWidget(),
                       ),
                     ),
                     if (_model.skeleton)
-                      Container(
+                      SizedBox(
                         width: double.infinity,
                         height: 80.0,
                         child: custom_widgets.SkeletonWrapper(
@@ -445,10 +445,10 @@ class _PreviewSpikeChartWidgetState extends State<PreviewSpikeChartWidget> {
                           isLoading: true,
                           duration: 3000,
                           borderRadius: 16.0,
-                          child: () => CardWidget(),
+                          child: () => const CardWidget(),
                         ),
                       ),
-                  ].divide(SizedBox(height: 16.0)),
+                  ].divide(const SizedBox(height: 16.0)),
                 ),
               ),
             ),

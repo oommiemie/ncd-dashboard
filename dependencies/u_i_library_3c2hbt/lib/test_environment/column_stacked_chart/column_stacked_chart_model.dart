@@ -29,7 +29,7 @@ class ColumnStackedChartModel
           int index, Function(ColumnStackedChartDataStruct) updateFn) =>
       myColumnStackedChart[index] = updateFn(myColumnStackedChart[index]);
 
-  List<Color> chartColor = [Color(4283120111), Color(4289636607)];
+  List<Color> chartColor = [const Color(0xff4b39ef), const Color(0xffaea8ff)];
   void addToChartColor(Color item) => chartColor.add(item);
   void removeFromChartColor(Color item) => chartColor.remove(item);
   void removeAtIndexFromChartColor(int index) => chartColor.removeAt(index);

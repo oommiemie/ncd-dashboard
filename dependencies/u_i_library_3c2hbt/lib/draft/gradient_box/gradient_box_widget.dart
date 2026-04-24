@@ -40,9 +40,9 @@ class _GradientBoxWidgetState extends State<GradientBoxWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.primaryColor = widget!.primaryGradient;
+      _model.primaryColor = widget.primaryGradient;
       safeSetState(() {});
-      _model.secondaryColor = widget!.secondaryGradient;
+      _model.secondaryColor = widget.secondaryGradient;
       safeSetState(() {});
     });
 
@@ -73,12 +73,12 @@ class _GradientBoxWidgetState extends State<GradientBoxWidget> {
               FlutterFlowTheme.of(context).secondary,
             )
           ],
-          stops: [0.0, 1.0],
-          begin: AlignmentDirectional(0.0, -1.0),
-          end: AlignmentDirectional(0, 1.0),
+          stops: const [0.0, 1.0],
+          begin: const AlignmentDirectional(0.0, -1.0),
+          end: const AlignmentDirectional(0, 1.0),
         ),
       ),
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Text(
         'Hello World',
         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -86,7 +86,7 @@ class _GradientBoxWidgetState extends State<GradientBoxWidget> {
                 fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
               ),
-              color: widget!.textColor,
+              color: widget.textColor,
               letterSpacing: 0.0,
               fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
               fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,

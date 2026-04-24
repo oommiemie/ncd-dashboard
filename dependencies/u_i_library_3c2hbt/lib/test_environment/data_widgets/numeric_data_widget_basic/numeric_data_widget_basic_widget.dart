@@ -35,17 +35,17 @@ class NumericDataWidgetBasicWidget extends StatefulWidget {
     this.imageHeight,
     double? titleSize,
     double? valueSize,
-  })  : this.title = title ?? '',
-        this.leftMargin = leftMargin ?? 8,
-        this.topMargin = topMargin ?? 8,
-        this.rightMargin = rightMargin ?? 8,
-        this.bottomMargin = bottomMargin ?? 8,
-        this.titleColor = titleColor ?? const Color(0xFF57636C),
-        this.borderRadius = borderRadius ?? 24,
-        this.shadowColor = shadowColor ?? const Color(0x1E666666),
-        this.widgetColor = widgetColor ?? Colors.white,
-        this.titleSize = titleSize ?? 16.0,
-        this.valueSize = valueSize ?? 24.0;
+  })  : title = title ?? '',
+        leftMargin = leftMargin ?? 8,
+        topMargin = topMargin ?? 8,
+        rightMargin = rightMargin ?? 8,
+        bottomMargin = bottomMargin ?? 8,
+        titleColor = titleColor ?? const Color(0xFF57636C),
+        borderRadius = borderRadius ?? 24,
+        shadowColor = shadowColor ?? const Color(0x1E666666),
+        widgetColor = widgetColor ?? Colors.white,
+        titleSize = titleSize ?? 16.0,
+        valueSize = valueSize ?? 24.0;
 
   final String title;
   final bool? hasShadow;
@@ -99,8 +99,8 @@ class _NumericDataWidgetBasicWidgetState
             curve: Curves.easeIn,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, -6.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, -6.0),
           ),
         ],
       ),
@@ -127,6 +127,22 @@ class _NumericDataWidgetBasicWidgetState
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+        if (animationsMap['containerOnActionTriggerAnimation'] != null) {
+          await animationsMap['containerOnActionTriggerAnimation']!
+              .controller
+              .forward(from: 0.0);
+        }
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+        if (animationsMap['containerOnActionTriggerAnimation'] != null) {
+          await animationsMap['containerOnActionTriggerAnimation']!
+              .controller
+              .reverse();
+        }
+      }),
       child: Container(
         decoration: BoxDecoration(
           color: valueOrDefault<Color>(
@@ -269,22 +285,6 @@ class _NumericDataWidgetBasicWidgetState
           ),
         ),
       ),
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-        if (animationsMap['containerOnActionTriggerAnimation'] != null) {
-          await animationsMap['containerOnActionTriggerAnimation']!
-              .controller
-              .forward(from: 0.0);
-        }
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-        if (animationsMap['containerOnActionTriggerAnimation'] != null) {
-          await animationsMap['containerOnActionTriggerAnimation']!
-              .controller
-              .reverse();
-        }
-      }),
     );
   }
 }

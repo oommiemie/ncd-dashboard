@@ -58,8 +58,8 @@ class _ButtonSelectWidgetWidgetState extends State<ButtonSelectWidgetWidget>
             curve: Curves.elasticOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.08, 1.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.08, 1.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -104,13 +104,13 @@ class _ButtonSelectWidgetWidgetState extends State<ButtonSelectWidgetWidget>
       },
       child: Container(
         decoration: BoxDecoration(
-          color: widget!.select == widget!.text
-              ? widget!.color
+          color: widget.select == widget.text
+              ? widget.color
               : FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: BorderRadius.circular(100.0),
           border: Border.all(
             color: valueOrDefault<Color>(
-              widget!.select == widget!.text
+              widget.select == widget.text
                   ? FlutterFlowTheme.of(context).secondaryBackground
                   : FlutterFlowTheme.of(context).alternate,
               FlutterFlowTheme.of(context).alternate,
@@ -118,10 +118,10 @@ class _ButtonSelectWidgetWidgetState extends State<ButtonSelectWidgetWidget>
           ),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 12.0, 6.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 12.0, 6.0),
           child: Text(
             valueOrDefault<String>(
-              widget!.text,
+              widget.text,
               'Text',
             ),
             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -132,7 +132,7 @@ class _ButtonSelectWidgetWidgetState extends State<ButtonSelectWidgetWidget>
                         FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                   ),
                   color: valueOrDefault<Color>(
-                    widget!.select == widget!.text
+                    widget.select == widget.text
                         ? FlutterFlowTheme.of(context).secondaryBackground
                         : FlutterFlowTheme.of(context).primaryText,
                     FlutterFlowTheme.of(context).primaryText,

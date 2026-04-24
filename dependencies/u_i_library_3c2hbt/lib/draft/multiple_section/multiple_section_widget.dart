@@ -44,11 +44,11 @@ class _MultipleSectionWidgetState extends State<MultipleSectionWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.titleMapping = (widget!.items?.elementAtOrNull(1))?.title;
+      _model.titleMapping = (widget.items?.elementAtOrNull(1))?.title;
       _model.descriptionMapping =
-          (widget!.items?.elementAtOrNull(2))?.description;
+          (widget.items?.elementAtOrNull(2))?.description;
       _model.checkboxMapping =
-          (widget!.items?.elementAtOrNull(3))?.checkboxValue;
+          (widget.items?.elementAtOrNull(3))?.checkboxValue;
       safeSetState(() {});
     });
 
@@ -94,7 +94,7 @@ class _MultipleSectionWidgetState extends State<MultipleSectionWidget> {
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -169,7 +169,7 @@ class _MultipleSectionWidgetState extends State<MultipleSectionWidget> {
                       ),
                       Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -195,7 +195,7 @@ class _MultipleSectionWidgetState extends State<MultipleSectionWidget> {
                                   ? BorderSide(
                                       width: 2,
                                       color: FlutterFlowTheme.of(context)
-                                          .alternate!,
+                                          .alternate,
                                     )
                                   : null,
                               activeColor: FlutterFlowTheme.of(context).primary,
@@ -204,7 +204,7 @@ class _MultipleSectionWidgetState extends State<MultipleSectionWidget> {
                           ),
                         ),
                       ),
-                    ].divide(SizedBox(width: 8.0)),
+                    ].divide(const SizedBox(width: 8.0)),
                   ),
                 ),
               ),

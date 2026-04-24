@@ -30,9 +30,9 @@ class StaticLabelWidget extends StatefulWidget {
     this.icon,
     this.textValue,
     this.imageURL,
-  })  : this.background = background ?? const Color(0x0E2196F3),
-        this.iconColor = iconColor ?? Colors.blue,
-        this.textColor = textColor ?? Colors.blue;
+  })  : background = background ?? const Color(0x0E2196F3),
+        iconColor = iconColor ?? Colors.blue,
+        textColor = textColor ?? Colors.blue;
 
   final Color background;
   final double? leftMargin;
@@ -90,24 +90,24 @@ class _StaticLabelWidgetState extends State<StaticLabelWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: widget!.width,
-      height: widget!.height,
+      width: widget.width,
+      height: widget.height,
       decoration: BoxDecoration(
         color: valueOrDefault<Color>(
-          widget!.background,
-          Color(0x0E2196F3),
+          widget.background,
+          const Color(0x0E2196F3),
         ),
         borderRadius: BorderRadius.circular(valueOrDefault<double>(
-          widget!.borderRadius,
+          widget.borderRadius,
           12.0,
         )),
         border: Border.all(
           color: valueOrDefault<Color>(
-            widget!.borderColor,
+            widget.borderColor,
             Colors.blue,
           ),
           width: valueOrDefault<double>(
-            widget!.stroke,
+            widget.stroke,
             1.0,
           ),
         ),
@@ -115,48 +115,48 @@ class _StaticLabelWidgetState extends State<StaticLabelWidget> {
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(
             valueOrDefault<double>(
-              widget!.leftMargin,
+              widget.leftMargin,
               8.0,
             ),
             valueOrDefault<double>(
-              widget!.topMargin,
+              widget.topMargin,
               4.0,
             ),
             valueOrDefault<double>(
-              widget!.rightMargin,
+              widget.rightMargin,
               8.0,
             ),
             valueOrDefault<double>(
-              widget!.bottomMargin,
+              widget.bottomMargin,
               4.0,
             )),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (widget!.imageURL == null || widget!.imageURL == '')
-              widget!.icon!,
-            if (widget!.imageURL != null && widget!.imageURL != '')
+            if (widget.imageURL == null || widget.imageURL == '')
+              widget.icon!,
+            if (widget.imageURL != null && widget.imageURL != '')
               Container(
                 width: valueOrDefault<double>(
-                  widget!.iconSize,
+                  widget.iconSize,
                   24.0,
                 ),
                 height: valueOrDefault<double>(
-                  widget!.iconSize,
+                  widget.iconSize,
                   24.0,
                 ),
                 clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                 ),
                 child: Image.network(
-                  widget!.imageURL!,
+                  widget.imageURL!,
                   fit: BoxFit.cover,
                 ),
               ),
             Text(
               valueOrDefault<String>(
-                widget!.textValue,
+                widget.textValue,
                 '{labelValue}',
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -166,10 +166,10 @@ class _StaticLabelWidgetState extends State<StaticLabelWidget> {
                           FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                     ),
                     color: valueOrDefault<Color>(
-                      widget!.textColor,
+                      widget.textColor,
                       Colors.blue,
                     ),
-                    fontSize: widget!.textSize,
+                    fontSize: widget.textSize,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                     fontStyle:
@@ -178,7 +178,7 @@ class _StaticLabelWidgetState extends State<StaticLabelWidget> {
             ),
           ].divide(SizedBox(
               width: valueOrDefault<double>(
-            widget!.gap,
+            widget.gap,
             4.0,
           ))),
         ),

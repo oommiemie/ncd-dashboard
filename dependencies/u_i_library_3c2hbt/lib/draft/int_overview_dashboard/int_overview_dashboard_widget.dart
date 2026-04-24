@@ -20,8 +20,8 @@ class IntOverviewDashboardWidget extends StatefulWidget {
     Color? containerColor,
     Color? txtColor,
     this.subTextColor,
-  })  : this.containerColor = containerColor ?? Colors.white,
-        this.txtColor = txtColor ?? Colors.black;
+  })  : containerColor = containerColor ?? Colors.white,
+        txtColor = txtColor ?? Colors.black;
 
   final Widget? icon;
   final String? label;
@@ -66,11 +66,11 @@ class _IntOverviewDashboardWidgetState
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: widget!.width?.toDouble(),
-      height: widget!.height?.toDouble(),
+      width: widget.width?.toDouble(),
+      height: widget.height?.toDouble(),
       decoration: BoxDecoration(
         color: valueOrDefault<Color>(
-          widget!.containerColor,
+          widget.containerColor,
           FlutterFlowTheme.of(context).primaryBackground,
         ),
         borderRadius: BorderRadius.circular(16.0),
@@ -79,16 +79,16 @@ class _IntOverviewDashboardWidgetState
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            widget!.icon!,
+            widget.icon!,
             Text(
               valueOrDefault<String>(
                 formatNumber(
-                  widget!.value,
+                  widget.value,
                   formatType: FormatType.decimal,
                   decimalType: DecimalType.periodDecimal,
                 ),
@@ -101,7 +101,7 @@ class _IntOverviewDashboardWidgetState
                       fontStyle:
                           FlutterFlowTheme.of(context).titleLarge.fontStyle,
                     ),
-                    color: widget!.txtColor,
+                    color: widget.txtColor,
                     letterSpacing: 0.0,
                     fontWeight:
                         FlutterFlowTheme.of(context).titleLarge.fontWeight,
@@ -111,7 +111,7 @@ class _IntOverviewDashboardWidgetState
             ),
             Text(
               valueOrDefault<String>(
-                widget!.label,
+                widget.label,
                 '[label]',
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -122,7 +122,7 @@ class _IntOverviewDashboardWidgetState
                           FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                     ),
                     color: valueOrDefault<Color>(
-                      widget!.subTextColor,
+                      widget.subTextColor,
                       FlutterFlowTheme.of(context).secondaryText,
                     ),
                     letterSpacing: 0.0,
@@ -132,7 +132,7 @@ class _IntOverviewDashboardWidgetState
                         FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                   ),
             ),
-          ].divide(SizedBox(height: 8.0)),
+          ].divide(const SizedBox(height: 8.0)),
         ),
       ),
     );

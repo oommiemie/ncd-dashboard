@@ -37,7 +37,7 @@ class BarChartWidgetModel extends FlutterFlowModel<BarChartWidgetWidget> {
               updateFn) =>
       chart[index] = updateFn(chart[index]);
 
-  List<Color> color = [Color(4282489841)];
+  List<Color> color = [const Color(0xff419bf1)];
   void addToColor(Color item) => color.add(item);
   void removeFromColor(Color item) => color.remove(item);
   void removeAtIndexFromColor(int index) => color.removeAt(index);

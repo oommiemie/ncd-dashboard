@@ -42,13 +42,13 @@ class _LogoutGifWidgetState extends State<LogoutGifWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Lottie.asset(
         'packages/u_i_library_3c2hbt/assets/jsons/logout.json',
         width: 400.0,
         height: 156.0,
         fit: BoxFit.contain,
-        frameRate: FrameRate(60.0),
+        frameRate: const FrameRate(60.0),
         animate: true,
       ),
     );

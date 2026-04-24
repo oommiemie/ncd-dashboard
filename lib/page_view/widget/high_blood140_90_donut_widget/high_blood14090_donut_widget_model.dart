@@ -36,7 +36,7 @@ class HighBlood14090DonutWidgetModel
               updateFn) =>
       chart[index] = updateFn(chart[index]);
 
-  List<Color> color = [Color(4294884104), Color(4294928385), Color(4291300103)];
+  List<Color> color = [const Color(0xfffebb08), const Color(0xffff6801), const Color(0xffc80b07)];
   void addToColor(Color item) => color.add(item);
   void removeFromColor(Color item) => color.remove(item);
   void removeAtIndexFromColor(int index) => color.removeAt(index);

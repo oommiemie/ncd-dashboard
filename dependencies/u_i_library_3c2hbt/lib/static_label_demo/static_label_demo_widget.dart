@@ -54,9 +54,9 @@ class _StaticLabelDemoWidgetState extends State<StaticLabelDemoWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: Align(
-          alignment: AlignmentDirectional(0.0, 0.0),
+          alignment: const AlignmentDirectional(0.0, 0.0),
           child: Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +67,7 @@ class _StaticLabelDemoWidgetState extends State<StaticLabelDemoWidget> {
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -144,7 +144,7 @@ class _StaticLabelDemoWidgetState extends State<StaticLabelDemoWidget> {
                                   wrapWithModel(
                                     model: _model.staticLabelModel1,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: StaticLabelWidget(
+                                    child: const StaticLabelWidget(
                                       background: Color(0x0DFFD900),
                                       borderColor: Color(0xFFFFD900),
                                       iconSize: 16.0,
@@ -158,7 +158,7 @@ class _StaticLabelDemoWidgetState extends State<StaticLabelDemoWidget> {
                                   wrapWithModel(
                                     model: _model.staticLabelModel2,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: StaticLabelWidget(
+                                    child: const StaticLabelWidget(
                                       background: Color(0x0C10AD37),
                                       borderColor: Color(0xFF10AD37),
                                       iconSize: 16.0,
@@ -169,12 +169,12 @@ class _StaticLabelDemoWidgetState extends State<StaticLabelDemoWidget> {
                                           'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/u-i-library-3c2hbt/assets/wioe8dsf3uxa/leaf-svgrepo-com_1.png',
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
-                          ].divide(SizedBox(height: 4.0)),
+                          ].divide(const SizedBox(height: 4.0)),
                         ),
-                      ].divide(SizedBox(height: 8.0)),
+                      ].divide(const SizedBox(height: 8.0)),
                     ),
                   ),
                 ),

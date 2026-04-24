@@ -85,7 +85,7 @@ class _SliverWidgetState extends State<SliverWidget> {
                           FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 2.0,
             )
@@ -95,7 +95,7 @@ class _SliverWidgetState extends State<SliverWidget> {
               return Stack(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -106,7 +106,7 @@ class _SliverWidgetState extends State<SliverWidget> {
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -156,7 +156,7 @@ class _SliverWidgetState extends State<SliverWidget> {
                                                     .fontStyle,
                                           ),
                                     ),
-                                  ].divide(SizedBox(height: 8.0)),
+                                  ].divide(const SizedBox(height: 8.0)),
                                 ),
                                 Expanded(
                                   child: Column(
@@ -205,7 +205,7 @@ class _SliverWidgetState extends State<SliverWidget> {
                                                       .fontStyle,
                                             ),
                                       ),
-                                    ].divide(SizedBox(height: 8.0)),
+                                    ].divide(const SizedBox(height: 8.0)),
                                   ),
                                 ),
                                 Expanded(
@@ -255,7 +255,7 @@ class _SliverWidgetState extends State<SliverWidget> {
                                                       .fontStyle,
                                             ),
                                       ),
-                                    ].divide(SizedBox(height: 8.0)),
+                                    ].divide(const SizedBox(height: 8.0)),
                                   ),
                                 ),
                                 Expanded(
@@ -305,24 +305,24 @@ class _SliverWidgetState extends State<SliverWidget> {
                                                       .fontStyle,
                                             ),
                                       ),
-                                    ].divide(SizedBox(height: 8.0)),
+                                    ].divide(const SizedBox(height: 8.0)),
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 8.0)),
+                              ].divide(const SizedBox(width: 8.0)),
                             ),
                           ),
                         ),
-                      ].divide(SizedBox(height: 16.0)),
+                      ].divide(const SizedBox(height: 16.0)),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     height: double.infinity,
                     child: custom_widgets.SkeletonWrapper(
                       width: double.infinity,
                       height: double.infinity,
                       isLoading: true,
-                      child: () => MultipleSectionWidget(),
+                      child: () => const MultipleSectionWidget(),
                     ),
                   ),
                 ],

@@ -28,9 +28,9 @@ class ColumnChartModel extends FlutterFlowModel<ColumnChartWidget> {
       myColumnChart[index] = updateFn(myColumnChart[index]);
 
   List<Color> chartColor = [
-    Color(4283120111),
-    Color(4281979584),
-    Color(4293823328)
+    const Color(0xff4b39ef),
+    const Color(0xff39d2c0),
+    const Color(0xffee8b60)
   ];
   void addToChartColor(Color item) => chartColor.add(item);
   void removeFromChartColor(Color item) => chartColor.remove(item);

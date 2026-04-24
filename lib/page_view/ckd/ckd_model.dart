@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/general/app_bar/app_bar_widget.dart';
 import '/general/buttonmore/buttonmore_widget.dart';
 import '/general/sidebar/sidebar_widget.dart';
@@ -9,15 +8,8 @@ import '/page_view/widget/high_blood_donut_widget/high_blood_donut_widget_widget
 import '/page_view/widget/high_blood_heatmap_witget/high_blood_heatmap_witget_widget.dart';
 import '/page_view/widget/patinestroke_lab_hb_a1_c_stack_chart_widget/patinestroke_lab_hb_a1_c_stack_chart_widget_widget.dart';
 import '/page_view/widget/strokemap_witget/strokemap_witget_widget.dart';
-import 'dart:ui';
 import 'ckd_widget.dart' show CkdWidget;
-import 'package:sticky_headers/sticky_headers.dart';
-import 'package:aligned_dialog/aligned_dialog.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class CkdModel extends FlutterFlowModel<CkdWidget> {
   ///  State fields for stateful widgets in this page.

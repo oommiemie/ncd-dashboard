@@ -242,7 +242,7 @@ _DenseSamples _generateDenseSamples({int total = 300}) {
   final diastolic = <num>[];
 
   // helper: สุ่มค่าจาก normal-ish distribution (Box-Muller แบบง่าย)
-  double _norm(double mean, double sd) {
+  double norm(double mean, double sd) {
     final u1 = (r.nextDouble() + 1e-9).clamp(1e-9, 1.0);
     final u2 = r.nextDouble();
     final z = math.sqrt(-2.0 * math.log(u1)) * math.cos(2 * math.pi * u2);
@@ -251,10 +251,10 @@ _DenseSamples _generateDenseSamples({int total = 300}) {
 
   // สร้างกลุ่ม "สูงทั้งสองตัว": S>=150~170, D>=95~110
   for (int i = 0; i < nBoth; i++) {
-    final h = _norm(165, 7).clamp(145.0, 190.0);
-    final w = _norm(78, 15).clamp(40.0, 150.0);
-    final s = _norm(155, 12).clamp(140.0, 200.0);
-    final d = _norm(98, 8).clamp(90.0, 130.0);
+    final h = norm(165, 7).clamp(145.0, 190.0);
+    final w = norm(78, 15).clamp(40.0, 150.0);
+    final s = norm(155, 12).clamp(140.0, 200.0);
+    final d = norm(98, 8).clamp(90.0, 130.0);
     heights.add(h);
     weights.add(w);
     systolic.add(s);
@@ -263,10 +263,10 @@ _DenseSamples _generateDenseSamples({int total = 300}) {
 
   // สร้างกลุ่ม "ตัวบนสูงอย่างเดียว": S>=145~165, D<90
   for (int i = 0; i < nIsoS; i++) {
-    final h = _norm(168, 7).clamp(150.0, 195.0);
-    final w = _norm(72, 13).clamp(35.0, 140.0);
-    final s = _norm(150, 10).clamp(140.0, 190.0);
-    final d = _norm(84, 6).clamp(60.0, 89.0);
+    final h = norm(168, 7).clamp(150.0, 195.0);
+    final w = norm(72, 13).clamp(35.0, 140.0);
+    final s = norm(150, 10).clamp(140.0, 190.0);
+    final d = norm(84, 6).clamp(60.0, 89.0);
     heights.add(h);
     weights.add(w);
     systolic.add(s);
@@ -275,10 +275,10 @@ _DenseSamples _generateDenseSamples({int total = 300}) {
 
   // สร้างกลุ่ม "ตัวล่างสูงอย่างเดียว": S<140, D>=90
   for (int i = 0; i < nIsoD; i++) {
-    final h = _norm(163, 8).clamp(145.0, 190.0);
-    final w = _norm(80, 16).clamp(40.0, 160.0);
-    final s = _norm(132, 6).clamp(110.0, 139.0);
-    final d = _norm(95, 6).clamp(90.0, 120.0);
+    final h = norm(163, 8).clamp(145.0, 190.0);
+    final w = norm(80, 16).clamp(40.0, 160.0);
+    final s = norm(132, 6).clamp(110.0, 139.0);
+    final d = norm(95, 6).clamp(90.0, 120.0);
     heights.add(h);
     weights.add(w);
     systolic.add(s);

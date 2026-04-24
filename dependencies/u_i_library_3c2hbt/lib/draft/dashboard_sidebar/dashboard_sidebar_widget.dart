@@ -60,32 +60,32 @@ class _DashboardSidebarWidgetState extends State<DashboardSidebarWidget> {
       width: 256.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topRight: Radius.circular(24.0),
           bottomRight: Radius.circular(24.0),
         ),
       ),
       child: Padding(
         padding: EdgeInsets.all(valueOrDefault<double>(
-          widget!.layoutMargin,
+          widget.layoutMargin,
           16.0,
         )),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Container(
-              width: widget!.logoWidth,
-              height: widget!.logoHeight,
-              decoration: BoxDecoration(),
+              width: widget.logoWidth,
+              height: widget.logoHeight,
+              decoration: const BoxDecoration(),
               child: Builder(builder: (_) {
                 return widget.brandLogo != null
                     ? widget.brandLogo!()
-                    : SizedBox.shrink();
+                    : const SizedBox.shrink();
               }),
             ),
             Text(
               valueOrDefault<String>(
-                widget!.appName,
+                widget.appName,
                 '{appName}',
               ),
               style: FlutterFlowTheme.of(context).headlineSmall.override(
@@ -103,9 +103,9 @@ class _DashboardSidebarWidgetState extends State<DashboardSidebarWidget> {
                   ),
             ),
             Builder(builder: (_) {
-              return widget.menu != null ? widget.menu!() : SizedBox.shrink();
+              return widget.menu != null ? widget.menu!() : const SizedBox.shrink();
             }),
-          ].divide(SizedBox(height: 16.0)),
+          ].divide(const SizedBox(height: 16.0)),
         ),
       ),
     );

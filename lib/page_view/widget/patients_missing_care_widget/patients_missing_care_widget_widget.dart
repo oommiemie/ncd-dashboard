@@ -126,7 +126,7 @@ class _PatientsMissingCareWidgetWidgetState
         borderRadius: BorderRadius.circular(34.0),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,7 +166,7 @@ class _PatientsMissingCareWidgetWidgetState
                     wrapWithModel(
                       model: _model.buttonmoreModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: ButtonmoreWidget(),
+                      child: const ButtonmoreWidget(),
                     ),
                   ],
                 ),
@@ -200,12 +200,12 @@ class _PatientsMissingCareWidgetWidgetState
                           ),
                       overflow: TextOverflow.ellipsis,
                     ),
-                  ].divide(SizedBox(width: 4.0)),
+                  ].divide(const SizedBox(width: 4.0)),
                 ),
               ],
             ),
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 height: double.infinity,
                 child: u_i_library_3c2hbt_custom_widgets.ColumnChart(
@@ -223,7 +223,7 @@ class _PatientsMissingCareWidgetWidgetState
                   axisTitleColor: FlutterFlowTheme.of(context).secondaryText,
                   showLegend: true,
                   legendFontSize: 12.0,
-                  tooltipColor: Color(0xFF005158),
+                  tooltipColor: const Color(0xFF005158),
                   tooltipFontColor:
                       FlutterFlowTheme.of(context).secondaryBackground,
                   chartData: _model.chart,
@@ -234,7 +234,7 @@ class _PatientsMissingCareWidgetWidgetState
                 ),
               ),
             ),
-          ].divide(SizedBox(height: 16.0)),
+          ].divide(const SizedBox(height: 16.0)),
         ),
       ),
     );

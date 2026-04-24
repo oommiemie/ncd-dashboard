@@ -59,8 +59,8 @@ class _ItemSelectWidgetWidgetState extends State<ItemSelectWidgetWidget>
             curve: Curves.elasticOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.08, 1.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(1.08, 1.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -87,6 +87,12 @@ class _ItemSelectWidgetWidgetState extends State<ItemSelectWidgetWidget>
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+      }),
       child: InkWell(
         splashColor: Colors.transparent,
         focusColor: Colors.transparent,
@@ -151,12 +157,6 @@ class _ItemSelectWidgetWidgetState extends State<ItemSelectWidgetWidget>
       ).animateOnActionTrigger(
           animationsMap['containerOnActionTriggerAnimation']!,
           hasBeenTriggered: hasContainerTriggered),
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-      }),
     );
   }
 }

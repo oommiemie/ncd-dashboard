@@ -43,14 +43,14 @@ class _LoadingWidgetState extends State<LoadingWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             width: 60.0,
             height: 60.0,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   blurRadius: 4.0,
@@ -63,7 +63,7 @@ class _LoadingWidgetState extends State<LoadingWidget> {
               ],
               shape: BoxShape.circle,
             ),
-            child: Container(
+            child: SizedBox(
               width: 60.0,
               height: 60.0,
               child: Stack(
@@ -71,11 +71,11 @@ class _LoadingWidgetState extends State<LoadingWidget> {
                   Opacity(
                     opacity: 0.5,
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Container(
                         width: 40.0,
                         height: 40.0,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color(0xA5FFFFFF),
                           shape: BoxShape.circle,
                         ),
@@ -92,8 +92,8 @@ class _LoadingWidgetState extends State<LoadingWidget> {
                         width: 60.0,
                         height: 60.0,
                         decoration: BoxDecoration(
-                          color: Color(0x40FFFFFF),
-                          boxShadow: [
+                          color: const Color(0x40FFFFFF),
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x1AFFFFFF),
@@ -105,7 +105,7 @@ class _LoadingWidgetState extends State<LoadingWidget> {
                           ],
                           shape: BoxShape.circle,
                           border: Border.all(
-                            color: Color(0x27FFFFFF),
+                            color: const Color(0x27FFFFFF),
                           ),
                         ),
                         child: Lottie.asset(
@@ -137,7 +137,7 @@ class _LoadingWidgetState extends State<LoadingWidget> {
                   fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                 ),
           ),
-        ].divide(SizedBox(height: 8.0)),
+        ].divide(const SizedBox(height: 8.0)),
       ),
     );
   }

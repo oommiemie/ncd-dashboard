@@ -22,7 +22,7 @@ class AuthProviderIDWidget extends StatefulWidget {
     this.upperWordingColor,
     this.upperWordingSize,
     this.navigation,
-  }) : this.buttonColor = buttonColor ?? Colors.white;
+  }) : buttonColor = buttonColor ?? Colors.white;
 
   final double? borderRadius;
   final double? buttonHeight;
@@ -62,8 +62,8 @@ class _AuthProviderIDWidgetState extends State<AuthProviderIDWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.025, 1.025),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.025, 1.025),
           ),
         ],
       ),
@@ -75,8 +75,8 @@ class _AuthProviderIDWidgetState extends State<AuthProviderIDWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(0.99, 0.99),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(0.99, 0.99),
           ),
         ],
       ),
@@ -101,7 +101,7 @@ class _AuthProviderIDWidgetState extends State<AuthProviderIDWidget>
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -115,11 +115,11 @@ class _AuthProviderIDWidgetState extends State<AuthProviderIDWidget>
                         FlutterFlowTheme.of(context).titleSmall.fontStyle,
                   ),
                   color: valueOrDefault<Color>(
-                    widget!.upperWordingColor,
+                    widget.upperWordingColor,
                     FlutterFlowTheme.of(context).primaryText,
                   ),
                   fontSize: valueOrDefault<double>(
-                    widget!.upperWordingSize,
+                    widget.upperWordingSize,
                     16.0,
                   ),
                   letterSpacing: 0.0,
@@ -131,6 +131,22 @@ class _AuthProviderIDWidgetState extends State<AuthProviderIDWidget>
           MouseRegion(
             opaque: false,
             cursor: MouseCursor.defer ?? MouseCursor.defer,
+            onEnter: ((event) async {
+              safeSetState(() => _model.eventHovered = true);
+              if (animationsMap['containerOnActionTriggerAnimation1'] != null) {
+                await animationsMap['containerOnActionTriggerAnimation1']!
+                    .controller
+                    .forward(from: 0.0);
+              }
+            }),
+            onExit: ((event) async {
+              safeSetState(() => _model.eventHovered = false);
+              if (animationsMap['containerOnActionTriggerAnimation1'] != null) {
+                await animationsMap['containerOnActionTriggerAnimation1']!
+                    .controller
+                    .reverse();
+              }
+            }),
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
@@ -214,24 +230,8 @@ class _AuthProviderIDWidgetState extends State<AuthProviderIDWidget>
             ).animateOnActionTrigger(
               animationsMap['containerOnActionTriggerAnimation1']!,
             ),
-            onEnter: ((event) async {
-              safeSetState(() => _model.eventHovered = true);
-              if (animationsMap['containerOnActionTriggerAnimation1'] != null) {
-                await animationsMap['containerOnActionTriggerAnimation1']!
-                    .controller
-                    .forward(from: 0.0);
-              }
-            }),
-            onExit: ((event) async {
-              safeSetState(() => _model.eventHovered = false);
-              if (animationsMap['containerOnActionTriggerAnimation1'] != null) {
-                await animationsMap['containerOnActionTriggerAnimation1']!
-                    .controller
-                    .reverse();
-              }
-            }),
           ),
-        ].divide(SizedBox(height: 8.0)),
+        ].divide(const SizedBox(height: 8.0)),
       ),
     );
   }

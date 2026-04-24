@@ -93,52 +93,52 @@ class _BarChartWidgetWidgetState extends State<BarChartWidgetWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.addToChart(u_i_library_3c2hbt_data_schema.BarStackedChartStruct(
         xTitle: 'ถุงลมโป่งพองเรื้อรัง',
-        yValue1: widget!.copd,
+        yValue1: widget.copd,
       ));
       safeSetState(() {});
       _model.addToChart(u_i_library_3c2hbt_data_schema.BarStackedChartStruct(
         xTitle: 'ความดันโลหิตสูง',
-        yValue1: widget!.hypertension,
+        yValue1: widget.hypertension,
       ));
       safeSetState(() {});
       _model.addToChart(u_i_library_3c2hbt_data_schema.BarStackedChartStruct(
         xTitle: 'ไตวาย',
-        yValue1: widget!.ckd,
+        yValue1: widget.ckd,
       ));
       safeSetState(() {});
       _model.addToChart(u_i_library_3c2hbt_data_schema.BarStackedChartStruct(
         xTitle: 'เบาหวาน',
-        yValue1: widget!.dm,
+        yValue1: widget.dm,
       ));
       safeSetState(() {});
       _model.addToChart(u_i_library_3c2hbt_data_schema.BarStackedChartStruct(
         xTitle: 'มะเร็งทุกชนิด',
-        yValue1: widget!.cancer,
+        yValue1: widget.cancer,
       ));
       safeSetState(() {});
       _model.addToChart(u_i_library_3c2hbt_data_schema.BarStackedChartStruct(
         xTitle: 'สุขภาพจิต',
-        yValue1: widget!.mentalhealth,
+        yValue1: widget.mentalhealth,
       ));
       safeSetState(() {});
       _model.addToChart(u_i_library_3c2hbt_data_schema.BarStackedChartStruct(
         xTitle: 'หลอดเลือดสมอง',
-        yValue1: widget!.stroke,
+        yValue1: widget.stroke,
       ));
       safeSetState(() {});
       _model.addToChart(u_i_library_3c2hbt_data_schema.BarStackedChartStruct(
         xTitle: 'หลอดเลือดหัวใจ',
-        yValue1: widget!.ischemiheart,
+        yValue1: widget.ischemiheart,
       ));
       safeSetState(() {});
       _model.addToChart(u_i_library_3c2hbt_data_schema.BarStackedChartStruct(
         xTitle: 'ปอดอักเสบจากการสูบบุหรี่ไฟฟ้า',
-        yValue1: widget!.evali,
+        yValue1: widget.evali,
       ));
       safeSetState(() {});
       _model.addToChart(u_i_library_3c2hbt_data_schema.BarStackedChartStruct(
         xTitle: 'ไขมันในเลือดสูง',
-        yValue1: widget!.hyperlipidemia,
+        yValue1: widget.hyperlipidemia,
       ));
       safeSetState(() {});
     });
@@ -152,8 +152,8 @@ class _BarChartWidgetWidgetState extends State<BarChartWidgetWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.03, 1.03),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.03, 1.03),
           ),
         ],
       ),
@@ -180,6 +180,24 @@ class _BarChartWidgetWidgetState extends State<BarChartWidgetWidget>
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+        if (animationsMap['containerOnActionTriggerAnimation'] != null) {
+          safeSetState(() => hasContainerTriggered = true);
+          SchedulerBinding.instance.addPostFrameCallback((_) async =>
+              animationsMap['containerOnActionTriggerAnimation']!
+                  .controller
+                  .forward(from: 0.0));
+        }
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+        if (animationsMap['containerOnActionTriggerAnimation'] != null) {
+          animationsMap['containerOnActionTriggerAnimation']!
+              .controller
+              .reverse();
+        }
+      }),
       child: Container(
         width: double.infinity,
         height: 350.0,
@@ -310,24 +328,6 @@ class _BarChartWidgetWidgetState extends State<BarChartWidgetWidget>
       ).animateOnActionTrigger(
           animationsMap['containerOnActionTriggerAnimation']!,
           hasBeenTriggered: hasContainerTriggered),
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-        if (animationsMap['containerOnActionTriggerAnimation'] != null) {
-          safeSetState(() => hasContainerTriggered = true);
-          SchedulerBinding.instance.addPostFrameCallback((_) async =>
-              animationsMap['containerOnActionTriggerAnimation']!
-                  .controller
-                  .forward(from: 0.0));
-        }
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-        if (animationsMap['containerOnActionTriggerAnimation'] != null) {
-          animationsMap['containerOnActionTriggerAnimation']!
-              .controller
-              .reverse();
-        }
-      }),
     );
   }
 }

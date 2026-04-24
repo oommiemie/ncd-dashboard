@@ -38,10 +38,10 @@ class DxDMHTPieChartWidgetModel
       data[index] = updateFn(data[index]);
 
   List<Color> color = [
-    Color(4286456264),
-    Color(4281247074),
-    Color(4293962036),
-    Color(4289677900)
+    const Color(0xff7e21c8),
+    const Color(0xff2ea562),
+    const Color(0xfff0a934),
+    const Color(0xffaf4a4c)
   ];
   void addToColor(Color item) => color.add(item);
   void removeFromColor(Color item) => color.remove(item);

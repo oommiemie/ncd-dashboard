@@ -17,7 +17,6 @@ import "package:u_i_library_3c2hbt/backend/schema/structs/index.dart"
     as u_i_library_3c2hbt_data_schema;
 
 import '/index.dart';
-import '/general/dashboard_shell/dashboard_shell_widget.dart';
 import 'package:u_i_library_3c2hbt/index.dart' as $u_i_library_3c2hbt;
 
 export 'package:go_router/go_router.dart';
@@ -86,46 +85,75 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         path: SplashWidget.routePath,
         builder: (context, params) => const SplashWidget(),
       ).toRoute(appStateNotifier),
-      ShellRoute(
-        builder: (context, state, child) => DashboardShellWidget(
-          location: state.uri.toString(),
-          child: child,
-        ),
-        routes: <RouteBase>[
-          FFRoute(
-            name: MainPageWidget.routeName,
-            path: MainPageWidget.routePath,
-            builder: (context, params) =>
-                const MainPageWidget(insideShell: true),
-          ).toRoute(appStateNotifier),
-          FFRoute(
-            name: PressurePageWidget.routeName,
-            path: PressurePageWidget.routePath,
-            builder: (context, params) =>
-                const PressurePageWidget(insideShell: true),
-          ).toRoute(appStateNotifier),
-          FFRoute(
-            name: DiabetesPageWidget.routeName,
-            path: DiabetesPageWidget.routePath,
-            builder: (context, params) =>
-                const DiabetesPageWidget(insideShell: true),
-          ).toRoute(appStateNotifier),
-          FFRoute(
-            name: StrokeWidget.routeName,
-            path: StrokeWidget.routePath,
-            builder: (context, params) => const StrokeWidget(insideShell: true),
-          ).toRoute(appStateNotifier),
-          FFRoute(
-            name: CkdWidget.routeName,
-            path: CkdWidget.routePath,
-            builder: (context, params) => const CkdWidget(insideShell: true),
-          ).toRoute(appStateNotifier),
-          FFRoute(
-            name: DistrictPageWidget.routeName,
-            path: DistrictPageWidget.routePath,
-            builder: (context, params) =>
-                const DistrictPageWidget(insideShell: true),
-          ).toRoute(appStateNotifier),
+      StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) => navigationShell,
+        branches: [
+          StatefulShellBranch(routes: [
+            GoRoute(
+              name: MainPageWidget.routeName,
+              path: MainPageWidget.routePath,
+              pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const MainPageWidget(),
+              ),
+            ),
+          ]),
+          StatefulShellBranch(routes: [
+            GoRoute(
+              name: PressurePageWidget.routeName,
+              path: PressurePageWidget.routePath,
+              pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const PressurePageWidget(),
+              ),
+            ),
+          ]),
+          StatefulShellBranch(routes: [
+            GoRoute(
+              name: DiabetesPageWidget.routeName,
+              path: DiabetesPageWidget.routePath,
+              pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const DiabetesPageWidget(),
+              ),
+            ),
+          ]),
+          StatefulShellBranch(routes: [
+            GoRoute(
+              name: StrokeWidget.routeName,
+              path: StrokeWidget.routePath,
+              pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const StrokeWidget(),
+              ),
+            ),
+          ]),
+          StatefulShellBranch(routes: [
+            GoRoute(
+              name: CkdWidget.routeName,
+              path: CkdWidget.routePath,
+              pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const CkdWidget(),
+              ),
+            ),
+          ]),
+          StatefulShellBranch(routes: [
+            GoRoute(
+              name: DistrictPageWidget.routeName,
+              path: DistrictPageWidget.routePath,
+              pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const DistrictPageWidget(),
+              ),
+            ),
+          ]),
         ],
       ),
       FFRoute(

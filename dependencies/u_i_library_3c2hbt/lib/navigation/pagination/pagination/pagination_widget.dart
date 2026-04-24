@@ -71,26 +71,26 @@ class _PaginationWidgetState extends State<PaginationWidget> {
     return Container(
       decoration: BoxDecoration(
         color: valueOrDefault<Color>(
-          widget!.bgColor,
+          widget.bgColor,
           FlutterFlowTheme.of(context).secondaryBackground,
         ),
         borderRadius: BorderRadius.circular(valueOrDefault<double>(
-          widget!.borderRadius,
+          widget.borderRadius,
           100.0,
         )),
         border: Border.all(
           color: valueOrDefault<Color>(
-            widget!.borderColor,
+            widget.borderColor,
             FlutterFlowTheme.of(context).alternate,
           ),
           width: valueOrDefault<double>(
-            widget!.borderWidth,
+            widget.borderWidth,
             1.0,
           ),
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -99,7 +99,7 @@ class _PaginationWidgetState extends State<PaginationWidget> {
               children: [
                 Text(
                   valueOrDefault<String>(
-                    widget!.range,
+                    widget.range,
                     '1 - 20',
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -110,8 +110,8 @@ class _PaginationWidgetState extends State<PaginationWidget> {
                           fontStyle:
                               FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
-                        color: widget!.textColor,
-                        fontSize: widget!.textSize,
+                        color: widget.textColor,
+                        fontSize: widget.textSize,
                         letterSpacing: 0.0,
                         fontWeight:
                             FlutterFlowTheme.of(context).bodyMedium.fontWeight,
@@ -129,8 +129,8 @@ class _PaginationWidgetState extends State<PaginationWidget> {
                           fontStyle:
                               FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
-                        color: widget!.textColor,
-                        fontSize: widget!.textSize,
+                        color: widget.textColor,
+                        fontSize: widget.textSize,
                         letterSpacing: 0.0,
                         fontWeight:
                             FlutterFlowTheme.of(context).bodyMedium.fontWeight,
@@ -141,7 +141,7 @@ class _PaginationWidgetState extends State<PaginationWidget> {
                 Text(
                   valueOrDefault<String>(
                     formatNumber(
-                      widget!.total,
+                      widget.total,
                       formatType: FormatType.decimal,
                       decimalType: DecimalType.periodDecimal,
                     ),
@@ -155,8 +155,8 @@ class _PaginationWidgetState extends State<PaginationWidget> {
                           fontStyle:
                               FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
-                        color: widget!.textColor,
-                        fontSize: widget!.textSize,
+                        color: widget.textColor,
+                        fontSize: widget.textSize,
                         letterSpacing: 0.0,
                         fontWeight:
                             FlutterFlowTheme.of(context).bodyMedium.fontWeight,
@@ -164,11 +164,11 @@ class _PaginationWidgetState extends State<PaginationWidget> {
                             FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
                 ),
-              ].divide(SizedBox(width: 4.0)),
+              ].divide(const SizedBox(width: 4.0)),
             ),
             AlignedTooltip(
               content: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                 child: Text(
                   'ย้อนกลับ',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -191,12 +191,12 @@ class _PaginationWidgetState extends State<PaginationWidget> {
               offset: 8.0,
               preferredDirection: AxisDirection.down,
               borderRadius: BorderRadius.circular(8.0),
-              backgroundColor: Color(0xCB3B3B3B),
+              backgroundColor: const Color(0xCB3B3B3B),
               elevation: 0.0,
               tailBaseWidth: 0.0,
               tailLength: 0.0,
-              waitDuration: Duration(milliseconds: 100),
-              showDuration: Duration(milliseconds: 100),
+              waitDuration: const Duration(milliseconds: 100),
+              showDuration: const Duration(milliseconds: 100),
               triggerMode: TooltipTriggerMode.tap,
               child: FlutterFlowIconButton(
                 borderRadius: 100.0,
@@ -213,7 +213,7 @@ class _PaginationWidgetState extends State<PaginationWidget> {
             ),
             AlignedTooltip(
               content: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
                 child: Text(
                   'ถัดไป',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -236,19 +236,19 @@ class _PaginationWidgetState extends State<PaginationWidget> {
               offset: 8.0,
               preferredDirection: AxisDirection.down,
               borderRadius: BorderRadius.circular(8.0),
-              backgroundColor: Color(0xCB3B3B3B),
+              backgroundColor: const Color(0xCB3B3B3B),
               elevation: 0.0,
               tailBaseWidth: 0.0,
               tailLength: 0.0,
-              waitDuration: Duration(milliseconds: 100),
-              showDuration: Duration(milliseconds: 100),
+              waitDuration: const Duration(milliseconds: 100),
+              showDuration: const Duration(milliseconds: 100),
               triggerMode: TooltipTriggerMode.tap,
               child: FlutterFlowIconButton(
                 borderRadius: 100.0,
                 buttonSize: 32.0,
                 fillColor: valueOrDefault<Color>(
-                  widget!.nextBtnColor,
-                  Color(0xFF00598A),
+                  widget.nextBtnColor,
+                  const Color(0xFF00598A),
                 ),
                 icon: Icon(
                   Icons.keyboard_arrow_right_rounded,
@@ -260,7 +260,7 @@ class _PaginationWidgetState extends State<PaginationWidget> {
                 },
               ),
             ),
-          ].divide(SizedBox(width: 8.0)),
+          ].divide(const SizedBox(width: 8.0)),
         ),
       ),
     );

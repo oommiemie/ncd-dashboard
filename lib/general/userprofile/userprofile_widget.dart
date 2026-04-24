@@ -42,12 +42,18 @@ class _UserprofileWidgetState extends State<UserprofileWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 1.0),
+      alignment: const AlignmentDirectional(0.0, 1.0),
       child: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: MouseRegion(
           opaque: false,
           cursor: MouseCursor.defer ?? MouseCursor.defer,
+          onEnter: ((event) async {
+            safeSetState(() => _model.mouseRegionHovered = true);
+          }),
+          onExit: ((event) async {
+            safeSetState(() => _model.mouseRegionHovered = false);
+          }),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(24.0),
             child: BackdropFilter(
@@ -237,12 +243,6 @@ class _UserprofileWidgetState extends State<UserprofileWidget> {
               ),
             ),
           ),
-          onEnter: ((event) async {
-            safeSetState(() => _model.mouseRegionHovered = true);
-          }),
-          onExit: ((event) async {
-            safeSetState(() => _model.mouseRegionHovered = false);
-          }),
         ),
       ),
     );

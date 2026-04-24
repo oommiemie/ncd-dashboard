@@ -22,9 +22,7 @@ import 'pressure_page_model.dart';
 export 'pressure_page_model.dart';
 
 class PressurePageWidget extends StatefulWidget {
-  const PressurePageWidget({super.key, this.insideShell = false});
-
-  final bool insideShell;
+  const PressurePageWidget({super.key});
 
   static String routeName = 'PressurePage';
   static String routePath = '/pressurePage';
@@ -55,7 +53,6 @@ class _PressurePageWidgetState extends State<PressurePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.insideShell) return _buildPageContent(context);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

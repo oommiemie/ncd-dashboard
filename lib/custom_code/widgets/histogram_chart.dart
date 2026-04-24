@@ -24,7 +24,7 @@ class _ComboPoint {
 
 class HistogramChart extends StatefulWidget {
   const HistogramChart({
-    Key? key,
+    super.key,
 
     // ── ทั่วไป ─────────────────────────────────
     this.title,
@@ -78,7 +78,7 @@ class HistogramChart extends StatefulWidget {
     this.secondaryYAxisInterval,
     this.secondaryAxisLabelFontSize,
     this.secondaryAxisLabelColor,
-  }) : super(key: key);
+  });
 
   // ── ทั่วไป ─────────────────────────────────
   final String? title;
@@ -243,7 +243,7 @@ class _HistogramChartState extends State<HistogramChart> {
         (isLight ? Colors.black87 : Colors.white70);
 
     // ❗ บังคับใช้แกนขวาสำหรับเส้นเสมอ (กันสับสน/กันสเกลรวมกับแกนซ้าย)
-    final useSecondaryY = true;
+    const useSecondaryY = true;
 
     // Secondary Y axis (right)
     final secondaryAxis = NumericAxis(

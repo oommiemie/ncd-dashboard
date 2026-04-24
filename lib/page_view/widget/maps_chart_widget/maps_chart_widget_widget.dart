@@ -51,16 +51,16 @@ class _MapsChartWidgetWidgetState extends State<MapsChartWidgetWidget> {
       ),
       child: Stack(
         children: [
-          Container(
+          SizedBox(
             width: double.infinity,
             height: double.infinity,
-            child: custom_widgets.ThailandMapMinimal(
+            child: const custom_widgets.ThailandMapMinimal(
               width: double.infinity,
               height: double.infinity,
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(100.0),
               child: BackdropFilter(
@@ -70,8 +70,8 @@ class _MapsChartWidgetWidgetState extends State<MapsChartWidgetWidget> {
                 ),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color(0x1AFFFFFF),
-                    boxShadow: [
+                    color: const Color(0x1AFFFFFF),
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x0D000000),
@@ -83,12 +83,12 @@ class _MapsChartWidgetWidgetState extends State<MapsChartWidgetWidget> {
                     ],
                     borderRadius: BorderRadius.circular(100.0),
                     border: Border.all(
-                      color: Color(0x1AFFFFFF),
+                      color: const Color(0x1AFFFFFF),
                     ),
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                     child: Text(
                       'แผนที่',
                       style: FlutterFlowTheme.of(context).titleMedium.override(

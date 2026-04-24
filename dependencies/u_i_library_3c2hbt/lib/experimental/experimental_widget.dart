@@ -107,7 +107,7 @@ class _ExperimentalWidgetState extends State<ExperimentalWidget> {
                       FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -117,7 +117,7 @@ class _ExperimentalWidgetState extends State<ExperimentalWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Container(
+                SizedBox(
                   width: double.infinity,
                   height: 500.0,
                   child: custom_widgets.DonutChart(
@@ -167,7 +167,7 @@ class _ExperimentalWidgetState extends State<ExperimentalWidget> {
                             elevation: 0,
                             insetPadding: EdgeInsets.zero,
                             backgroundColor: Colors.transparent,
-                            alignment: AlignmentDirectional(0.0, 0.0)
+                            alignment: const AlignmentDirectional(0.0, 0.0)
                                 .resolve(Directionality.of(context)),
                             child: GestureDetector(
                               onTap: () {
@@ -185,7 +185,7 @@ class _ExperimentalWidgetState extends State<ExperimentalWidget> {
                                 dialogBorderRadius: 24.0,
                                 margin: 24.0,
                                 titleSize: 20.0,
-                                titleColor: Color(0xFF10AD37),
+                                titleColor: const Color(0xFF10AD37),
                                 descriptionSize: 14.0,
                                 descriptionColor:
                                     FlutterFlowTheme.of(context).secondaryText,
@@ -196,7 +196,7 @@ class _ExperimentalWidgetState extends State<ExperimentalWidget> {
                                 leftBtnBorder: 1.0,
                                 leftBtnBorderColor:
                                     FlutterFlowTheme.of(context).alternate,
-                                rightBtnColor: Color(0xFF10AD37),
+                                rightBtnColor: const Color(0xFF10AD37),
                                 rightBtnText: 'ดูรายการยา',
                                 rightBtnTextColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -212,7 +212,7 @@ class _ExperimentalWidgetState extends State<ExperimentalWidget> {
                                   Navigator.pop(context);
                                 },
                                 illustraion: () =>
-                                    MedicineShoppingConfirmWidget(),
+                                    const MedicineShoppingConfirmWidget(),
                               ),
                             ),
                           );
@@ -223,9 +223,9 @@ class _ExperimentalWidgetState extends State<ExperimentalWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -252,8 +252,8 @@ class _ExperimentalWidgetState extends State<ExperimentalWidget> {
                   ),
                 ),
               ]
-                  .divide(SizedBox(height: 60.0))
-                  .addToEnd(SizedBox(height: 120.0)),
+                  .divide(const SizedBox(height: 60.0))
+                  .addToEnd(const SizedBox(height: 120.0)),
             ),
           ),
         ),

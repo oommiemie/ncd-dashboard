@@ -16,9 +16,7 @@ import 'diabetes_page_model.dart';
 export 'diabetes_page_model.dart';
 
 class DiabetesPageWidget extends StatefulWidget {
-  const DiabetesPageWidget({super.key, this.insideShell = false});
-
-  final bool insideShell;
+  const DiabetesPageWidget({super.key});
 
   static String routeName = 'DiabetesPage';
   static String routePath = '/diabetesPage';
@@ -49,7 +47,6 @@ class _DiabetesPageWidgetState extends State<DiabetesPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.insideShell) return _buildPageContent(context);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

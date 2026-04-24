@@ -89,13 +89,13 @@ class _ColumnChartWidgetState extends State<ColumnChartWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(64.0, 0.0, 64.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(64.0, 0.0, 64.0, 0.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(40.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 4.0,
                           color: Color(0x33000000),
@@ -111,7 +111,7 @@ class _ColumnChartWidgetState extends State<ColumnChartWidget> {
                         width: 1.0,
                       ),
                     ),
-                    child: Container(
+                    child: SizedBox(
                       width: double.infinity,
                       height: 600.0,
                       child: custom_widgets.ColumnChart(

@@ -20,8 +20,8 @@ void main() async {
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
 
-  final u_i_library_3c2hbtAppState = u_i_library_3c2hbt_app_state.FFAppState();
-  await u_i_library_3c2hbtAppState.initializePersistedState();
+  final uILibrary3c2hbtappstate = u_i_library_3c2hbt_app_state.FFAppState();
+  await uILibrary3c2hbtappstate.initializePersistedState();
 
   runApp(MultiProvider(
     providers: [
@@ -29,7 +29,7 @@ void main() async {
         create: (context) => appState,
       ),
       ChangeNotifierProvider(
-        create: (context) => u_i_library_3c2hbtAppState,
+        create: (context) => uILibrary3c2hbtappstate,
       ),
     ],
     child: MyApp(),
@@ -37,6 +37,8 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
@@ -89,7 +91,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'NCD Dashboad',
       scrollBehavior: MyAppScrollBehavior(),
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
@@ -98,25 +100,25 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         brightness: Brightness.light,
         scrollbarTheme: ScrollbarThemeData(
-          thumbVisibility: MaterialStateProperty.all(false),
-          trackVisibility: MaterialStateProperty.all(true),
+          thumbVisibility: WidgetStateProperty.all(false),
+          trackVisibility: WidgetStateProperty.all(true),
           interactive: false,
-          thickness: MaterialStateProperty.all(6.0),
-          radius: Radius.circular(100.0),
-          trackColor: MaterialStateProperty.resolveWith((states) {
-            if (states.contains(MaterialState.hovered)) {
-              return Color(436207615);
+          thickness: WidgetStateProperty.all(6.0),
+          radius: const Radius.circular(100.0),
+          trackColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.hovered)) {
+              return const Color(0x19ffffff);
             }
-            return Color(436207615);
+            return const Color(0x19ffffff);
           }),
-          thumbColor: MaterialStateProperty.resolveWith((states) {
-            if (states.contains(MaterialState.dragged)) {
-              return Color(4283917164);
+          thumbColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.dragged)) {
+              return const Color(0xff57636c);
             }
-            if (states.contains(MaterialState.hovered)) {
-              return Color(4283917164);
+            if (states.contains(WidgetState.hovered)) {
+              return const Color(0xff57636c);
             }
-            return Color(871757301);
+            return const Color(0x33f5f5f5);
           }),
           crossAxisMargin: 4.0,
         ),

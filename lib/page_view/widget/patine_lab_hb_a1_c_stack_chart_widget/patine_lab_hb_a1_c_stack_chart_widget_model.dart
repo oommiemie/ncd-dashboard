@@ -38,7 +38,7 @@ class PatineLabHbA1CStackChartWidgetModel
               updateFn) =>
       chart[index] = updateFn(chart[index]);
 
-  List<Color> color = [Color(4281040839), Color(4286456264)];
+  List<Color> color = [const Color(0xff2b7fc7), const Color(0xff7e21c8)];
   void addToColor(Color item) => color.add(item);
   void removeFromColor(Color item) => color.remove(item);
   void removeAtIndexFromColor(int index) => color.removeAt(index);

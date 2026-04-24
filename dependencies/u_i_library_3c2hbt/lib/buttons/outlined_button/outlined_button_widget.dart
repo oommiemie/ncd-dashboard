@@ -71,8 +71,8 @@ class _OutlinedButtonWidgetState extends State<OutlinedButtonWidget>
             curve: Curves.easeInOut,
             delay: 150.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -95,19 +95,19 @@ class _OutlinedButtonWidgetState extends State<OutlinedButtonWidget>
         print('Button pressed ...');
       },
       text: valueOrDefault<String>(
-        widget!.text,
+        widget.text,
         'Label',
       ),
       options: FFButtonOptions(
-        width: widget!.buttonWidth,
+        width: widget.buttonWidth,
         height: valueOrDefault<double>(
-          widget!.buttonHeight,
+          widget.buttonHeight,
           56.0,
         ),
-        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
         color: valueOrDefault<Color>(
-          widget!.buttonColor,
+          widget.buttonColor,
           FlutterFlowTheme.of(context).secondaryBackground,
         ),
         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
@@ -116,10 +116,10 @@ class _OutlinedButtonWidgetState extends State<OutlinedButtonWidget>
                 fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
               ),
               color: valueOrDefault<Color>(
-                widget!.textColor,
+                widget.textColor,
                 FlutterFlowTheme.of(context).primaryText,
               ),
-              fontSize: widget!.textSize,
+              fontSize: widget.textSize,
               letterSpacing: 0.0,
               fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
               fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
@@ -127,16 +127,16 @@ class _OutlinedButtonWidgetState extends State<OutlinedButtonWidget>
         elevation: 0.0,
         borderSide: BorderSide(
           color: valueOrDefault<Color>(
-            widget!.buttonBorderColor,
+            widget.buttonBorderColor,
             FlutterFlowTheme.of(context).secondaryText,
           ),
           width: valueOrDefault<double>(
-            widget!.buttonBorderWidth,
+            widget.buttonBorderWidth,
             1.0,
           ),
         ),
         borderRadius: BorderRadius.circular(valueOrDefault<double>(
-          widget!.buttonRadius,
+          widget.buttonRadius,
           16.0,
         )),
       ),

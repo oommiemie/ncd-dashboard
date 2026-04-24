@@ -27,7 +27,7 @@ class SearchBarWidget extends StatefulWidget {
     this.masking,
     this.maxLenght,
     this.autoFocus,
-  }) : this.buttonColor = buttonColor ?? const Color(0xFF00598A);
+  }) : buttonColor = buttonColor ?? const Color(0xFF00598A);
 
   final double? textFieldWidth;
   final String? placeholder;
@@ -65,7 +65,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
       _model.isSearched = false;
       safeSetState(() {});
       await Future.delayed(
-        Duration(
+        const Duration(
           milliseconds: 300,
         ),
       );
@@ -74,7 +74,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    _model.textFieldMask = MaskTextInputFormatter(mask: widget!.masking!);
+    _model.textFieldMask = MaskTextInputFormatter(mask: widget.masking!);
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -88,16 +88,16 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: AlignmentDirectional(1.0, -1.0),
+      alignment: const AlignmentDirectional(1.0, -1.0),
       children: [
         Container(
-          width: widget!.textFieldWidth,
+          width: widget.textFieldWidth,
           height: valueOrDefault<double>(
-            widget!.textFieldHeight,
+            widget.textFieldHeight,
             48.0,
           ),
-          decoration: BoxDecoration(),
-          child: Container(
+          decoration: const BoxDecoration(),
+          child: SizedBox(
             width: _model.searchWidth,
             child: TextFormField(
               controller: _model.textController,
@@ -108,7 +108,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                 });
                 await widget.iconButtonAction?.call();
               },
-              autofocus: widget!.autoFocus == true,
+              autofocus: widget.autoFocus == true,
               textInputAction: TextInputAction.search,
               obscureText: false,
               decoration: InputDecoration(
@@ -127,7 +127,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                           FlutterFlowTheme.of(context).labelMedium.fontStyle,
                     ),
                 hintText: valueOrDefault<String>(
-                  widget!.placeholder,
+                  widget.placeholder,
                   'Placeholder',
                 ),
                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
@@ -149,17 +149,17 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(valueOrDefault<double>(
-                    widget!.textFieldBorderRadius,
+                    widget.textFieldBorderRadius,
                     24.0,
                   )),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: widget!.buttonColor,
+                    color: widget.buttonColor,
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(valueOrDefault<double>(
-                    widget!.textFieldBorderRadius,
+                    widget.textFieldBorderRadius,
                     24.0,
                   )),
                 ),
@@ -169,7 +169,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(valueOrDefault<double>(
-                    widget!.textFieldBorderRadius,
+                    widget.textFieldBorderRadius,
                     24.0,
                   )),
                 ),
@@ -179,14 +179,14 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(valueOrDefault<double>(
-                    widget!.textFieldBorderRadius,
+                    widget.textFieldBorderRadius,
                     24.0,
                   )),
                 ),
                 filled: true,
                 fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                 contentPadding:
-                    EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     font: GoogleFonts.ibmPlexSansThaiLooped(
@@ -202,7 +202,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                         FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                   ),
               textAlign: TextAlign.start,
-              maxLength: widget!.maxLenght,
+              maxLength: widget.maxLenght,
               maxLengthEnforcement: MaxLengthEnforcement.none,
               buildCounter: (context,
                       {required currentLength,
@@ -218,7 +218,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
         ),
         AlignedTooltip(
           content: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
             child: Text(
               'กดเพื่อค้นหา',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -240,29 +240,29 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
           offset: 8.0,
           preferredDirection: AxisDirection.down,
           borderRadius: BorderRadius.circular(8.0),
-          backgroundColor: Color(0xCB3B3B3B),
+          backgroundColor: const Color(0xCB3B3B3B),
           elevation: 0.0,
           tailBaseWidth: 0.0,
           tailLength: 0.0,
-          waitDuration: Duration(milliseconds: 100),
-          showDuration: Duration(milliseconds: 100),
+          waitDuration: const Duration(milliseconds: 100),
+          showDuration: const Duration(milliseconds: 100),
           triggerMode: TooltipTriggerMode.tap,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 4.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 4.0, 0.0),
             child: FlutterFlowIconButton(
               borderRadius: valueOrDefault<double>(
-                widget!.iconButtonBorderRadius,
+                widget.iconButtonBorderRadius,
                 100.0,
               ),
               buttonSize: valueOrDefault<double>(
-                widget!.iconButtonHeight,
+                widget.iconButtonHeight,
                 40.0,
               ),
               fillColor: valueOrDefault<Color>(
-                widget!.buttonColor,
-                Color(0xFF00598A),
+                widget.buttonColor,
+                const Color(0xFF00598A),
               ),
-              icon: widget!.icon!,
+              icon: widget.icon!,
               onPressed: () async {
                 _model.isSearched = true;
                 safeSetState(() {});

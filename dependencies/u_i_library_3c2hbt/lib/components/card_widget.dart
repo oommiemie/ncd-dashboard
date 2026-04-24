@@ -44,8 +44,8 @@ class _CardWidgetState extends State<CardWidget> {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Color(0xE6FFFFFF),
-        boxShadow: [
+        color: const Color(0xE6FFFFFF),
+        boxShadow: const [
           BoxShadow(
             blurRadius: 12.0,
             color: Color(0x1E666666),
@@ -62,7 +62,7 @@ class _CardWidgetState extends State<CardWidget> {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -72,10 +72,10 @@ class _CardWidgetState extends State<CardWidget> {
               width: 64.0,
               height: 64.0,
               decoration: BoxDecoration(
-                color: Color(0xFFFFEEDF),
+                color: const Color(0xFFFFEEDF),
                 borderRadius: BorderRadius.circular(12.0),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.boy_rounded,
                 color: Color(0xFFFF8000),
                 size: 24.0,
@@ -93,7 +93,7 @@ class _CardWidgetState extends State<CardWidget> {
                           fontStyle:
                               FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                         ),
-                        color: Color(0xFF3C3C3C),
+                        color: const Color(0xFF3C3C3C),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                         fontStyle:
@@ -112,7 +112,7 @@ class _CardWidgetState extends State<CardWidget> {
                                   .titleLarge
                                   .fontStyle,
                             ),
-                            color: Color(0xFFFF8000),
+                            color: const Color(0xFFFF8000),
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
                             fontStyle: FlutterFlowTheme.of(context)
@@ -141,11 +141,11 @@ class _CardWidgetState extends State<CardWidget> {
                                 .fontStyle,
                           ),
                     ),
-                  ].divide(SizedBox(width: 4.0)),
+                  ].divide(const SizedBox(width: 4.0)),
                 ),
-              ].divide(SizedBox(height: 2.0)),
+              ].divide(const SizedBox(height: 2.0)),
             ),
-          ].divide(SizedBox(width: 8.0)),
+          ].divide(const SizedBox(width: 8.0)),
         ),
       ),
     );

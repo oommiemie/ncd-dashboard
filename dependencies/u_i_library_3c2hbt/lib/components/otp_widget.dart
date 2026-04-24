@@ -97,9 +97,9 @@ class _OtpWidgetState extends State<OtpWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -109,7 +109,7 @@ class _OtpWidgetState extends State<OtpWidget> {
               autoDisposeControllers: false,
               appContext: context,
               length: valueOrDefault<int>(
-                widget!.pinLenght,
+                widget.pinLenght,
                 6,
               ),
               textStyle: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -119,11 +119,11 @@ class _OtpWidgetState extends State<OtpWidget> {
                           FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                     ),
                     color: valueOrDefault<Color>(
-                      widget!.pinFontColor,
-                      Color(0xFF194987),
+                      widget.pinFontColor,
+                      const Color(0xFF194987),
                     ),
                     fontSize: valueOrDefault<double>(
-                      widget!.pinFontSize,
+                      widget.pinFontSize,
                       16.0,
                     ),
                     letterSpacing: 0.0,
@@ -138,7 +138,7 @@ class _OtpWidgetState extends State<OtpWidget> {
               errorTextSpace: 16.0,
               showCursor: true,
               cursorColor: valueOrDefault<Color>(
-                widget!.cursorColor,
+                widget.cursorColor,
                 FlutterFlowTheme.of(context).primaryText,
               ),
               obscureText: false,
@@ -146,46 +146,46 @@ class _OtpWidgetState extends State<OtpWidget> {
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               pinTheme: PinTheme(
                 fieldHeight: valueOrDefault<double>(
-                  widget!.fieldSize,
+                  widget.fieldSize,
                   48.0,
                 ),
                 fieldWidth: valueOrDefault<double>(
-                  widget!.fieldSize,
+                  widget.fieldSize,
                   48.0,
                 ),
                 borderWidth: valueOrDefault<double>(
-                  widget!.fieldBorder,
+                  widget.fieldBorder,
                   2.0,
                 ),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(valueOrDefault<double>(
-                    widget!.fieldRadius,
+                    widget.fieldRadius,
                     8.0,
                   )),
                   bottomRight: Radius.circular(valueOrDefault<double>(
-                    widget!.fieldRadius,
+                    widget.fieldRadius,
                     8.0,
                   )),
                   topLeft: Radius.circular(valueOrDefault<double>(
-                    widget!.fieldRadius,
+                    widget.fieldRadius,
                     8.0,
                   )),
                   topRight: Radius.circular(valueOrDefault<double>(
-                    widget!.fieldRadius,
+                    widget.fieldRadius,
                     8.0,
                   )),
                 ),
                 shape: PinCodeFieldShape.box,
                 activeColor: valueOrDefault<Color>(
-                  widget!.activeColor,
+                  widget.activeColor,
                   FlutterFlowTheme.of(context).alternate,
                 ),
                 inactiveColor: valueOrDefault<Color>(
-                  widget!.inactiveColor,
+                  widget.inactiveColor,
                   FlutterFlowTheme.of(context).alternate,
                 ),
                 selectedColor: valueOrDefault<Color>(
-                  widget!.selectedColor,
+                  widget.selectedColor,
                   FlutterFlowTheme.of(context).secondaryText,
                 ),
                 activeFillColor:
@@ -212,7 +212,7 @@ class _OtpWidgetState extends State<OtpWidget> {
                     children: [
                       Text(
                         valueOrDefault<String>(
-                          widget!.expireWording,
+                          widget.expireWording,
                           'รหัส OTP หมดอายุแล้ว',
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -225,11 +225,11 @@ class _OtpWidgetState extends State<OtpWidget> {
                                     .fontStyle,
                               ),
                               color: valueOrDefault<Color>(
-                                widget!.expireWordingFontColor,
+                                widget.expireWordingFontColor,
                                 FlutterFlowTheme.of(context).secondaryText,
                               ),
                               fontSize: valueOrDefault<double>(
-                                widget!.expireWordingFontSize,
+                                widget.expireWordingFontSize,
                                 14.0,
                               ),
                               letterSpacing: 0.0,
@@ -241,7 +241,7 @@ class _OtpWidgetState extends State<OtpWidget> {
                                   .fontStyle,
                             ),
                       ),
-                    ].divide(SizedBox(width: 4.0)),
+                    ].divide(const SizedBox(width: 4.0)),
                   ),
                 if (_model.isTimerEnd == false)
                   Row(
@@ -249,10 +249,10 @@ class _OtpWidgetState extends State<OtpWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, -1.0),
+                        alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Text(
                           valueOrDefault<String>(
-                            widget!.countDownWording,
+                            widget.countDownWording,
                             'รหัสจะหมดอายุภายใน',
                           ),
                           style: FlutterFlowTheme.of(context)
@@ -267,11 +267,11 @@ class _OtpWidgetState extends State<OtpWidget> {
                                       .fontStyle,
                                 ),
                                 color: valueOrDefault<Color>(
-                                  widget!.countDownWordingFontColor,
+                                  widget.countDownWordingFontColor,
                                   FlutterFlowTheme.of(context).secondaryText,
                                 ),
                                 fontSize: valueOrDefault<double>(
-                                  widget!.countDownWordingFontSize,
+                                  widget.countDownWordingFontSize,
                                   14.0,
                                 ),
                                 letterSpacing: 0.0,
@@ -286,7 +286,7 @@ class _OtpWidgetState extends State<OtpWidget> {
                       ),
                       FlutterFlowTimer(
                         initialTime: valueOrDefault<int>(
-                          widget!.timer,
+                          widget.timer,
                           120000,
                         ),
                         getDisplayTime: (value) =>
@@ -315,11 +315,11 @@ class _OtpWidgetState extends State<OtpWidget> {
                                         .fontStyle,
                                   ),
                                   color: valueOrDefault<Color>(
-                                    widget!.timerFontColor,
-                                    Color(0xFF194987),
+                                    widget.timerFontColor,
+                                    const Color(0xFF194987),
                                   ),
                                   fontSize: valueOrDefault<double>(
-                                    widget!.timerFontSize,
+                                    widget.timerFontSize,
                                     14.0,
                                   ),
                                   letterSpacing: 0.0,
@@ -329,7 +329,7 @@ class _OtpWidgetState extends State<OtpWidget> {
                                       .fontStyle,
                                 ),
                       ),
-                    ].divide(SizedBox(width: 4.0)),
+                    ].divide(const SizedBox(width: 4.0)),
                   ),
                 FFButtonWidget(
                   onPressed: (_model.isTimerEnd == false)
@@ -345,16 +345,16 @@ class _OtpWidgetState extends State<OtpWidget> {
                           });
                         },
                   text: 'ขอ OTP ใหม่',
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.refresh,
                     size: 16.0,
                   ),
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     textStyle: FlutterFlowTheme.of(context).bodySmall.override(
                           font: GoogleFonts.ibmPlexSansThaiLooped(
@@ -374,10 +374,10 @@ class _OtpWidgetState extends State<OtpWidget> {
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(24.0),
-                    disabledTextColor: Color(0x3F000000),
+                    disabledTextColor: const Color(0x3F000000),
                   ),
                 ),
-              ].divide(SizedBox(height: 8.0)),
+              ].divide(const SizedBox(height: 8.0)),
             ),
           ],
         ),

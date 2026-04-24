@@ -102,13 +102,13 @@ class _ColumnStackedChartWidgetState extends State<ColumnStackedChartWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(64.0, 0.0, 64.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(64.0, 0.0, 64.0, 0.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(40.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 4.0,
                           color: Color(0x33000000),
@@ -125,8 +125,8 @@ class _ColumnStackedChartWidgetState extends State<ColumnStackedChartWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Container(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
                         width: double.infinity,
                         height: 650.0,
                         child: custom_widgets.ColumnStackedChart(
