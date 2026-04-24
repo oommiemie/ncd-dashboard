@@ -137,6 +137,74 @@ class _CardWidget2WidgetState extends State<CardWidget2Widget>
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
+  Widget _buildSubStat(BuildContext context, String label, int? value) {
+    final formatted = formatNumber(
+      value,
+      formatType: FormatType.decimal,
+      decimalType: DecimalType.periodDecimal,
+    );
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(5.0, 2.0, 5.0, 2.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(14.0),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 12.0, sigmaY: 12.0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: const Color(0x2B000000),
+              borderRadius: BorderRadius.circular(14.0),
+              border: Border.all(color: const Color(0x26FFFFFF), width: 1),
+            ),
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  label,
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: FlutterFlowTheme.of(context).labelSmall.override(
+                        font: GoogleFonts.ibmPlexSansThaiLooped(
+                          fontWeight: FontWeight.w400,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                        ),
+                        color: const Color(0xCCFFFFFF),
+                        letterSpacing: 0.2,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 9.0,
+                        lineHeight: 1.15,
+                      ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  valueOrDefault<String>(formatted, '0'),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        font: GoogleFonts.ibmPlexSansThaiLooped(
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontStyle,
+                        ),
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        letterSpacing: 0.0,
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.w700,
+                      ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   void dispose() {
     _model.maybeDispose();
@@ -326,170 +394,27 @@ class _CardWidget2WidgetState extends State<CardWidget2Widget>
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Expanded(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                valueOrDefault<String>(
-                                  widget!.subtitle1,
-                                  'subtitle1',
-                                ),
-                                maxLines: 1,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelSmall
-                                    .override(
-                                      font: GoogleFonts.ibmPlexSansThaiLooped(
-                                        fontWeight: FontWeight.w300,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontStyle,
-                                      ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w300,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelSmall
-                                          .fontStyle,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  widget!.value1?.toString(),
-                                  '0',
-                                ),
-                                maxLines: 1,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodySmall
-                                    .override(
-                                      font: GoogleFonts.ibmPlexSansThaiLooped(
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .fontStyle,
-                                      ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontStyle,
-                                    ),
-                              ),
-                            ],
+                          child: _buildSubStat(
+                            context,
+                            widget.subtitle1 ?? 'subtitle1',
+                            widget.value1,
                           ),
                         ),
                         Expanded(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                valueOrDefault<String>(
-                                  widget!.subtitle2,
-                                  'subtitle2',
-                                ),
-                                maxLines: 1,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelSmall
-                                    .override(
-                                      font: GoogleFonts.ibmPlexSansThaiLooped(
-                                        fontWeight: FontWeight.w300,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontStyle,
-                                      ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w300,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelSmall
-                                          .fontStyle,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  widget!.value2?.toString(),
-                                  '0',
-                                ),
-                                maxLines: 1,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodySmall
-                                    .override(
-                                      font: GoogleFonts.ibmPlexSansThaiLooped(
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .fontStyle,
-                                      ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontStyle,
-                                    ),
-                              ),
-                            ],
+                          child: _buildSubStat(
+                            context,
+                            widget.subtitle2 ?? 'subtitle2',
+                            widget.value2,
                           ),
                         ),
                         Expanded(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                valueOrDefault<String>(
-                                  widget!.subtitle3,
-                                  'subtitle3',
-                                ),
-                                maxLines: 1,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelSmall
-                                    .override(
-                                      font: GoogleFonts.ibmPlexSansThaiLooped(
-                                        fontWeight: FontWeight.w300,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontStyle,
-                                      ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w300,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelSmall
-                                          .fontStyle,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  widget!.value3?.toString(),
-                                  '0',
-                                ),
-                                maxLines: 1,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodySmall
-                                    .override(
-                                      font: GoogleFonts.ibmPlexSansThaiLooped(
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .fontStyle,
-                                      ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontStyle,
-                                    ),
-                              ),
-                            ],
+                          child: _buildSubStat(
+                            context,
+                            widget.subtitle3 ?? 'subtitle3',
+                            widget.value3,
                           ),
                         ),
                       ],
